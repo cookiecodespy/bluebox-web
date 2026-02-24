@@ -32,7 +32,7 @@ const colorClasses: Record<string, { icon: string; badge: string; bullet: string
   blue: { icon: "bg-blue-100 text-blue-700", badge: "blue", bullet: "bg-blue-500" },
   navy: { icon: "bg-slate-100 text-slate-700", badge: "slate", bullet: "bg-slate-500" },
   teal: { icon: "bg-cyan-100 text-cyan-700", badge: "teal", bullet: "bg-cyan-500" },
-  green: { icon: "bg-emerald-100 text-emerald-700", badge: "green", bullet: "bg-emerald-500" },
+  green: { icon: "bg-cyan-100 text-cyan-700", badge: "teal", bullet: "bg-cyan-500" },
 };
 
 export function ServicesGrid() {

@@ -86,7 +86,7 @@ export const SERVICES = [
       "Exportación a PDF / Excel",
       "Acceso por roles y permisos",
     ],
-    color: "green",
+    color: "navy",
   },
 ];
 

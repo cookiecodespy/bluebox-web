@@ -14,11 +14,11 @@ export function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="inline-block mb-4">
               <Image
-                src="/images/logo-white.svg"
+                src="/images/bluebox-logo.jpg"
                 alt="Blue Box"
-                width={140}
-                height={35}
-                className="h-8 w-auto"
+                width={120}
+                height={120}
+                className="h-10 w-auto rounded-sm"
               />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs mb-6">
@@ -93,7 +93,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-2"
                 >
-                  <span className="text-emerald-500">●</span> WhatsApp
+                  <span className="text-cyan-400">●</span> WhatsApp
                 </a>
               </li>
               <li>

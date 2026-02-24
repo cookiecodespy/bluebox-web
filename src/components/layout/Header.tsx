@@ -36,12 +36,12 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex-shrink-0 flex items-center gap-2">
           <Image
-            src="/images/logo.svg"
+            src="/images/bluebox-logo.jpg"
             alt="Blue Box"
-            width={140}
-            height={35}
+            width={120}
+            height={120}
             priority
-            className="h-8 w-auto"
+            className="h-10 w-auto rounded-sm"
           />
         </Link>
 
