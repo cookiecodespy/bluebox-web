@@ -10,9 +10,12 @@ import { EngagementModels } from "@/components/sections/EngagementModels";
 import { DashboardShowcase } from "@/components/sections/DashboardShowcase";
 import { OrgRoles } from "@/components/sections/OrgRoles";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
+import { Methodology } from "@/components/sections/Methodology";
 import { TechStackSection } from "@/components/sections/TechStackSection";
+import { IntegrationsBand } from "@/components/sections/IntegrationsBand";
 import { Comparison } from "@/components/sections/Comparison";
 import { Guarantees } from "@/components/sections/Guarantees";
+import { MidCTA } from "@/components/sections/MidCTA";
 import { TeamTeaser } from "@/components/sections/TeamTeaser";
 import { CaseStudies } from "@/components/sections/CaseStudies";
 import { IndustriesGrid } from "@/components/sections/IndustriesGrid";
@@ -37,9 +40,12 @@ export default function HomePage() {
       <DashboardShowcase />
       <OrgRoles />
       <ProcessTimeline />
+      <Methodology />
       <TechStackSection />
+      <IntegrationsBand />
       <Comparison />
       <Guarantees />
+      <MidCTA />
       <TeamTeaser />
       <CaseStudies />
       <IndustriesGrid />
