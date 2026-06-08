@@ -1,21 +1,25 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/Button";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen mesh-bg flex items-center justify-center px-4">
-      <div className="text-center">
-        <div className="text-9xl font-extrabold gradient-text mb-6">404</div>
-        <h1 className="text-3xl font-bold text-white mb-4">
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden px-4">
+      <div className="bp-grid-fade pointer-events-none absolute inset-0" />
+      <div className="relative text-center">
+        <div className="font-display text-[clamp(5rem,18vw,11rem)] font-semibold leading-none tracking-[-0.04em] text-ink">
+          4<span className="text-cobalt">0</span>4
+        </div>
+        <p className="mono mt-2 text-xs uppercase tracking-[0.16em] text-ink-mute">
           Página no encontrada
-        </h1>
-        <p className="text-slate-300 text-lg mb-8 max-w-md mx-auto">
-          La página que buscas no existe o fue movida. Vuelve al inicio para
-          continuar.
         </p>
-        <Button href="/" variant="primary" size="lg">
-          Volver al inicio
-        </Button>
+        <p className="mx-auto mt-6 max-w-md text-lg leading-relaxed text-ink-soft">
+          La página que buscas no existe o fue movida.
+        </p>
+        <Link
+          href="/"
+          className="mt-8 inline-flex items-center gap-2.5 rounded-full bg-cobalt px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-cobalt-deep"
+        >
+          ← Volver al inicio
+        </Link>
       </div>
     </div>
   );

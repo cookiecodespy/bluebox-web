@@ -1,100 +1,92 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
-import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Container } from "@/components/layout/Container";
+import { PageHero } from "@/components/sections/PageHero";
 import { Card } from "@/components/ui/Card";
+import { Icon } from "@/components/ui/Icon";
+import { Reveal } from "@/components/ui/Reveal";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 
 export const metadata: Metadata = buildMetadata({
   title: "Nosotros",
   description:
-    "Conoce al equipo de Blue Box: ingenieros y automatizadores especializados en crear sistemas que funcionan en el mundo real.",
+    "BlueBox: empresa chilena de ingeniería de software. Sistemas confiables, trazables y operables — con la responsabilidad de una empresa formal.",
 });
 
 const VALUES = [
   {
-    icon: "🎯",
-    title: "Resultados medibles",
+    icon: "data",
+    title: "Resultados, no entregables",
     description:
-      "No vendemos proyectos, vendemos resultados. Cada entregable tiene una métrica de éxito definida antes de empezar.",
+      "Cada proyecto tiene una métrica de éxito definida antes de empezar. No vendemos horas, resolvemos problemas.",
   },
   {
-    icon: "🔍",
+    icon: "ai",
     title: "Transparencia total",
     description:
-      "Documentamos todo: arquitectura, decisiones de diseño y limitaciones. Sin cajas negras ni dependencia de nosotros.",
+      "Documentamos arquitectura, decisiones y límites. Sin cajas negras ni dependencia de nosotros.",
   },
   {
-    icon: "⚡",
-    title: "Velocidad sin apresurar",
+    icon: "spark",
+    title: "Velocidad sin apurar",
     description:
       "Mostramos valor rápido con pilotos acotados, pero construimos sobre bases sólidas que escalan.",
   },
   {
-    icon: "🛡️",
+    icon: "shield",
     title: "Operabilidad",
     description:
-      "Todo lo que construimos debe poder ser operado por personas no técnicas. Si es demasiado complejo para mantener, lo rediseñamos.",
+      "Todo lo que construimos debe poder operarlo gente no técnica. Si es muy complejo de mantener, lo rediseñamos.",
   },
+];
+
+const STATS = [
+  { n: "+10", label: "años de trayectoria formal" },
+  { n: "4–8", label: "semanas para un piloto" },
+  { n: "0", label: "vendor lock-in por diseño" },
+  { n: "Chile", label: "equipo · zona horaria EE.UU." },
 ];
 
 export default function NosotrosPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-20 bg-slate-950 relative overflow-hidden">
-        <div className="absolute inset-0 mesh-bg" />
-        <div className="absolute inset-0 grid-overlay opacity-40" />
-        <Container>
-          <div className="relative z-10 max-w-3xl">
-            <p className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-4">
-              Nosotros
-            </p>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
-              Ingenieros que construyen{" "}
-              <span className="gradient-text">cosas que funcionan</span>
-            </h1>
-            <p className="text-slate-300 text-xl leading-relaxed">
-              Blue Box nació en Santiago de Chile con una convicción simple: la
-              automatización empresarial debe ser confiable, trazable y operable
-              sin depender de los que la construyeron.
-            </p>
-          </div>
-        </Container>
-      </section>
+      <PageHero
+        eyebrow="Nosotros"
+        title="Ingenieros que construyen"
+        accent="cosas que funcionan."
+        sub="BlueBox es una empresa chilena formal con la convicción de que el software crítico debe ser confiable, trazable y operable sin depender de quien lo construyó."
+      />
 
-      {/* Mission */}
-      <section className="py-20 bg-white">
+      {/* Misión */}
+      <section className="pb-24">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
-              <SectionTitle
-                eyebrow="Nuestra misión"
-                title="Automatización con control humano"
-                highlight="control humano"
-              />
-              <p className="text-slate-600 leading-relaxed mb-6">
-                Creemos que la automatización no debe eliminar el criterio humano, sino
-                amplificarlo. Construimos sistemas donde la máquina ejecuta lo repetitivo
-                y el humano aprueba lo importante, con evidencia de cada decisión.
+              <p className="kicker mb-5 flex items-center gap-3">
+                <span className="inline-block h-px w-6 bg-cobalt" /> Nuestra misión
               </p>
-              <p className="text-slate-600 leading-relaxed">
-                Cada proyecto que entregamos tiene documentación clara, monitoreo
-                incorporado y un plan de continuidad. Cuando termina el contrato, tu
-                equipo puede operar y extender el sistema sin depender de nosotros.
+              <h2 className="font-display text-[2rem] font-medium leading-[1.08] tracking-[-0.02em] text-ink md:text-[2.4rem]">
+                Tecnología con <span className="text-cobalt">control humano</span>
+              </h2>
+              <p className="mt-6 leading-relaxed text-ink-soft">
+                Creemos que la automatización no debe reemplazar el criterio humano, sino
+                amplificarlo: la máquina ejecuta lo repetitivo y la persona aprueba lo
+                importante, con evidencia de cada decisión.
+              </p>
+              <p className="mt-4 leading-relaxed text-ink-soft">
+                Cada proyecto se entrega con documentación clara, monitoreo incorporado y
+                un plan de continuidad. Cuando termina el contrato, tu equipo opera y
+                extiende el sistema sin depender de nosotros.
               </p>
             </div>
-            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { n: "100%", label: "proyectos con documentación entregada" },
-                  { n: "4–8", label: "semanas para un piloto funcional" },
-                  { n: "0", label: "vendor lock-in por diseño" },
-                  { n: "🇨🇱", label: "Equipo 100% en Chile" },
-                ].map((s) => (
-                  <div key={s.label} className="text-center p-4">
-                    <div className="text-3xl font-extrabold text-blue-700 mb-2">{s.n}</div>
-                    <div className="text-xs text-slate-500 leading-snug">{s.label}</div>
+            <div className="rounded-[14px] border border-line bg-paper-2 p-8">
+              <div className="grid grid-cols-2 gap-px overflow-hidden rounded-lg bg-line">
+                {STATS.map((s) => (
+                  <div key={s.label} className="bg-paper-2 p-6 text-center">
+                    <div className="font-display text-[2rem] font-semibold tracking-[-0.02em] text-cobalt">
+                      {s.n}
+                    </div>
+                    <div className="kicker mt-2 normal-case leading-snug">{s.label}</div>
                   </div>
                 ))}
               </div>
@@ -103,21 +95,26 @@ export default function NosotrosPage() {
         </Container>
       </section>
 
-      {/* Values */}
-      <section className="py-20 bg-slate-50">
+      {/* Valores */}
+      <section className="bg-paper-2/40 py-24">
         <Container>
-          <SectionTitle
-            eyebrow="Valores"
-            title="Cómo trabajamos"
-            centered
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {VALUES.map((v) => (
-              <Card key={v.title} hover padding="lg">
-                <div className="text-3xl mb-4">{v.icon}</div>
-                <h3 className="text-lg font-bold text-slate-900 mb-3">{v.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{v.description}</p>
-              </Card>
+          <p className="kicker mb-5 flex items-center gap-3">
+            <span className="inline-block h-px w-6 bg-cobalt" /> Cómo trabajamos
+          </p>
+          <h2 className="mb-12 font-display text-[2rem] font-medium tracking-[-0.02em] text-ink md:text-[2.4rem]">
+            Cuatro principios, sin excepción
+          </h2>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            {VALUES.map((v, i) => (
+              <Reveal key={v.title} delay={(i % 2) * 80}>
+                <Card padding="lg" className="h-full">
+                  <div className="mb-5 grid h-12 w-12 place-items-center rounded-xl border border-line bg-paper text-cobalt">
+                    <Icon name={v.icon} className="h-[22px] w-[22px]" />
+                  </div>
+                  <h3 className="font-display text-[19px] font-medium text-ink">{v.title}</h3>
+                  <p className="mt-3 leading-relaxed text-ink-soft">{v.description}</p>
+                </Card>
+              </Reveal>
             ))}
           </div>
         </Container>

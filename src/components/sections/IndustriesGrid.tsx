@@ -1,31 +1,40 @@
 import { INDUSTRIES } from "@/lib/constants";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Container } from "@/components/layout/Container";
+import { Icon } from "@/components/ui/Icon";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function IndustriesGrid() {
   return (
-    <section className="py-24 bg-slate-950">
+    <section className="bg-paper-2/40 py-24">
       <Container>
         <SectionTitle
+          index="04"
           eyebrow="Industrias"
-          title="Automatización que entiende tu sector"
-          highlight="entiende tu sector"
-          description="Trabajamos con empresas de distintas industrias, adaptando cada solución a la realidad operacional de cada sector."
-          centered
-          light
+          title="Conocemos el terreno de tu sector"
+          highlight="tu sector"
+          description="Adaptamos cada solución a la realidad operacional de la industria — no al revés."
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {INDUSTRIES.map((ind) => (
-            <div
-              key={ind.id}
-              className="glass-dark rounded-2xl p-6 hover:bg-blue-900/20 transition-colors duration-300 group"
-            >
-              <div className="text-4xl mb-4">{ind.icon}</div>
-              <h3 className="text-white font-bold text-lg mb-2 group-hover:text-cyan-400 transition-colors">
-                {ind.title}
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed">{ind.description}</p>
-            </div>
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {INDUSTRIES.map((ind, i) => (
+            <Reveal key={ind.id} delay={(i % 3) * 80}>
+              <div className="group h-full rounded-[14px] border border-line bg-paper p-6 transition-colors hover:border-ink/20">
+                <div className="flex items-center justify-between">
+                  <span className="grid h-11 w-11 place-items-center rounded-xl border border-line text-cobalt transition-colors group-hover:border-cobalt/40 group-hover:bg-cobalt/[0.06]">
+                    <Icon name={ind.id} className="h-5 w-5" />
+                  </span>
+                  <span className="mono text-[12px] text-ink-mute">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <h3 className="mt-4 font-display text-[18px] font-medium tracking-[-0.01em] text-ink transition-colors group-hover:text-cobalt">
+                  {ind.title}
+                </h3>
+                <p className="mt-2 text-[14.5px] leading-relaxed text-ink-soft">
+                  {ind.description}
+                </p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </Container>

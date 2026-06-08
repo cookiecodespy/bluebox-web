@@ -4,12 +4,11 @@ interface CardProps {
   children: ReactNode;
   className?: string;
   hover?: boolean;
-  glass?: boolean;
   padding?: "sm" | "md" | "lg";
 }
 
 const paddingClasses = {
-  sm: "p-4",
+  sm: "p-5",
   md: "p-6",
   lg: "p-8",
 };
@@ -18,18 +17,14 @@ export function Card({
   children,
   className = "",
   hover = false,
-  glass = false,
   padding = "md",
 }: CardProps) {
   return (
     <div
       className={[
-        "rounded-2xl border",
-        glass
-          ? "glass"
-          : "bg-white border-slate-200 shadow-sm",
+        "rounded-[14px] border border-line bg-paper-2",
         hover
-          ? "transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-blue-200"
+          ? "transition-all duration-300 hover:-translate-y-0.5 hover:border-ink/20 hover:shadow-[0_22px_50px_-30px_rgba(23,20,16,0.55)]"
           : "",
         paddingClasses[padding],
         className,

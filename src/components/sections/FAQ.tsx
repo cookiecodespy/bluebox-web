@@ -5,13 +5,13 @@ import { Container } from "@/components/layout/Container";
 
 export function FAQ() {
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-24">
       <Container size="lg">
         <SectionTitle
+          index="05"
           eyebrow="Preguntas frecuentes"
-          title="Todo lo que necesitas saber antes de empezar"
-          highlight="Todo lo que necesitas saber"
-          centered
+          title="Lo que conviene saber antes de empezar"
+          highlight="antes de empezar"
         />
         <Accordion items={FAQ_DATA} />
       </Container>

@@ -1,5 +1,6 @@
 interface SectionTitleProps {
   eyebrow?: string;
+  index?: string; // ej. "02" — numeración dossier
   title: string;
   highlight?: string;
   description?: string;
@@ -9,6 +10,7 @@ interface SectionTitleProps {
 
 export function SectionTitle({
   eyebrow,
+  index,
   title,
   highlight,
   description,
@@ -16,37 +18,41 @@ export function SectionTitle({
   light = false,
 }: SectionTitleProps) {
   const align = centered ? "text-center" : "text-left";
-  const textColor = light ? "text-white" : "text-slate-900";
-  const descColor = light ? "text-slate-300" : "text-slate-600";
-  const eyebrowColor = light ? "text-cyan-400" : "text-blue-600";
+  const titleColor = light ? "text-paper" : "text-ink";
+  const descColor = light ? "text-paper/70" : "text-ink-soft";
 
-  // Replace highlight in title
   const renderTitle = () => {
-    if (!highlight || !title.includes(highlight)) {
-      return <span>{title}</span>;
-    }
-    const parts = title.split(highlight);
+    if (!highlight || !title.includes(highlight)) return title;
+    const [before, after] = title.split(highlight);
     return (
       <>
-        {parts[0]}
-        <span className="gradient-text">{highlight}</span>
-        {parts[1]}
+        {before}
+        <span className="text-cobalt">{highlight}</span>
+        {after}
       </>
     );
   };
 
   return (
-    <div className={`${align} max-w-3xl ${centered ? "mx-auto" : ""} mb-12`}>
-      {eyebrow && (
-        <p className={`text-sm font-semibold tracking-widest uppercase mb-3 ${eyebrowColor}`}>
-          {eyebrow}
+    <div className={`${align} max-w-3xl ${centered ? "mx-auto" : ""} mb-14`}>
+      {(eyebrow || index) && (
+        <p
+          className={`kicker mb-5 flex items-center gap-3 ${
+            centered ? "justify-center" : ""
+          } ${light ? "!text-paper/60" : ""}`}
+        >
+          {index && <span className="text-cobalt">{index}</span>}
+          {index && eyebrow && <span className="h-px w-6 bg-cobalt" />}
+          {eyebrow && <span>{eyebrow}</span>}
         </p>
       )}
-      <h2 className={`text-3xl md:text-4xl font-bold leading-tight mb-4 ${textColor}`}>
+      <h2
+        className={`font-display text-[2rem] font-medium leading-[1.06] tracking-[-0.02em] md:text-[2.6rem] ${titleColor}`}
+      >
         {renderTitle()}
       </h2>
       {description && (
-        <p className={`text-lg leading-relaxed ${descColor}`}>{description}</p>
+        <p className={`mt-5 text-lg leading-relaxed ${descColor}`}>{description}</p>
       )}
     </div>
   );

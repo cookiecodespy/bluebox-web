@@ -1,44 +1,58 @@
-import { CASES } from "@/lib/constants";
+import { CASES, CASES_NOTE } from "@/lib/constants";
 import { Badge } from "@/components/ui/Badge";
+import { Card } from "@/components/ui/Card";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Container } from "@/components/layout/Container";
+import { Reveal } from "@/components/ui/Reveal";
+import { MediaFrame } from "@/components/ui/MediaFrame";
+
+const CASE_IMG: Record<string, { src: string; icon: string }> = {
+  recepciones: { src: "/images/caso-logistica.jpg", icon: "logistica" },
+  wms: { src: "/images/caso-retail.jpg", icon: "retail" },
+  aprobaciones: { src: "/images/caso-manufactura.jpg", icon: "manufactura" },
+};
 
 export function CaseStudies() {
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-24">
       <Container>
         <SectionTitle
-          eyebrow="Casos de éxito"
-          title="Resultados reales, procesos reales"
-          highlight="Resultados reales"
-          description="Ejemplos de impacto medible en empresas que automatizaron con Blue Box. Sin revelar datos confidenciales."
-          centered
+          index="03"
+          eyebrow="Casos"
+          title="El tipo de problemas que resolvemos"
+          highlight="que resolvemos"
+          description={CASES_NOTE}
         />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {CASES.map((c) => (
-            <div
-              key={c.id}
-              className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
-            >
-              {/* Metric header */}
-              <div className="mesh-bg px-8 py-10 text-center">
-                <div className="text-6xl font-extrabold gradient-text mb-2">
-                  {c.metric}
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+          {CASES.map((c, i) => (
+            <Reveal key={c.id} delay={(i % 3) * 90}>
+              <Card hover padding="lg" className="flex h-full flex-col">
+                <MediaFrame
+                  src={CASE_IMG[c.id]?.src}
+                  alt={c.title}
+                  icon={CASE_IMG[c.id]?.icon ?? "data"}
+                  ratio="aspect-[16/10]"
+                  className="mb-6"
+                />
+                <div className="mb-5 flex items-center justify-between">
+                  <Badge variant="accent">{c.industry}</Badge>
+                  <span className="mono text-[12px] text-ink-mute">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                 </div>
-                <div className="text-slate-300 text-sm">{c.metricLabel}</div>
-              </div>
-              {/* Body */}
-              <div className="p-6 flex flex-col flex-1">
-                <Badge variant="blue" className="mb-3 self-start">{c.industry}</Badge>
-                <h3 className="text-lg font-bold text-slate-900 mb-3">{c.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed flex-1">{c.description}</p>
-                <div className="flex flex-wrap gap-2 mt-5">
+                <h3 className="font-display text-[19px] font-medium leading-snug tracking-[-0.01em] text-ink">
+                  {c.title}
+                </h3>
+                <p className="mt-3 flex-1 text-[15px] leading-relaxed text-ink-soft">
+                  {c.summary}
+                </p>
+                <div className="mt-6 flex flex-wrap gap-2">
                   {c.tags.map((tag) => (
-                    <Badge key={tag} variant="slate">{tag}</Badge>
+                    <Badge key={tag}>{tag}</Badge>
                   ))}
                 </div>
-              </div>
-            </div>
+              </Card>
+            </Reveal>
           ))}
         </div>
       </Container>

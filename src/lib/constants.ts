@@ -1,208 +1,243 @@
 // ============================================================
-// Blue Box – Constantes globales
+// BlueBox – Constantes globales (contenido centralizado)
 // Para actualizar: edita este archivo y haz commit.
 // ============================================================
 
-export const SITE_NAME = "Blue Box";
-export const SITE_TAGLINE = "Software a medida. Automatización real.";
+export const SITE_NAME = "BlueBox";
+export const SITE_TAGLINE = "Ingeniería de software de extremo a extremo.";
 export const SITE_DESCRIPTION =
-  "Sistemas, integraciones y agentes de IA con control, aprobaciones y evidencia. Transformamos procesos complejos en flujos digitales confiables.";
+  "Desarrollo a medida, integraciones, automatización y datos listos para IA. Empresa chilena formal — SLA, contratos y trazabilidad — para Chile, LATAM y EE. UU.";
 export const SITE_URL = "https://cookiecodespy.github.io/bluebox-web";
 
-// Contacto
+// Contacto  (TODO Tomás: verificar que estén activos)
 export const WHATSAPP_NUMBER = "56990166224";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 export const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Hola Blue Box, me interesa agendar una demo para conocer sus servicios."
+  "Hola BlueBox, me gustaría agendar un diagnóstico para conocer cómo trabajan."
 );
 export const WHATSAPP_FULL_URL = `${WHATSAPP_URL}?text=${WHATSAPP_MESSAGE}`;
 export const CONTACT_EMAIL = "contacto@bluebox.cl";
 export const CONTACT_PHONE = "+56 9 9016 6224";
-
-// Redes (agrega tus handles cuando los tengas)
 export const LINKEDIN_URL = "https://www.linkedin.com/company/bluebox-cl";
 
-// Servicios
-export const SERVICES = [
+// ------------------------------------------------------------
+// HERO
+// ------------------------------------------------------------
+export const HERO = {
+  kicker: "Empresa chilena de ingeniería de software · Santiago, Chile",
+  titleLead: "Ingeniería de software en la que tu operación",
+  titleAccent: "confía",
+  sub: "Desarrollo a medida, integraciones, automatización y datos listos para IA — con la responsabilidad de una empresa formal: SLA, contratos y trazabilidad. Para Chile, LATAM y EE. UU.",
+  // Cifras conservadoras y verificables (TODO Tomás: confirmar números).
+  stats: [
+    { v: "+10 años", l: "trayectoria formal" },
+    { v: "Chile", l: "equipo · zona horaria EE.UU." },
+    { v: "SLA", l: "contratos · Ley 19.628" },
+  ],
+};
+
+// ------------------------------------------------------------
+// SOLUCIONES (orientadas a resultado) — la firma indexada 01–06
+// ------------------------------------------------------------
+export const SOLUTIONS = [
   {
-    id: "control-tower",
-    icon: "tower",
-    title: "Control Tower",
-    subtitle: "PDF → Canon → Compare → Gate",
-    description:
-      "Centralizamos el flujo documental: capturamos PDFs, los canonizamos, comparamos contra la fuente y aplicamos una compuerta de aprobación antes de cualquier acción. Cero errores silenciosos.",
-    features: [
-      "Captura automática de documentos",
-      "Normalización y canonización",
-      "Comparación contra fuente de verdad",
-      "Gate de aprobación con evidencia",
-      "Auditoría trazable 100%",
-    ],
-    color: "blue",
+    id: "moderniza",
+    title: "Moderniza sistemas legados",
+    blurb: "Renueva plataformas antiguas sin frenar la operación.",
   },
   {
-    id: "integraciones",
-    icon: "integration",
-    title: "Integraciones WMS / ERP",
-    subtitle: "RPA cuando no hay API",
-    description:
-      "Conectamos tus sistemas legados aunque no tengan API: usamos RPA para leer pantallas, extraer datos y sincronizar con tu WMS o ERP. Funciona donde los conectores estándar fallan.",
-    features: [
-      "Automatización RPA de interfaz",
-      "Conectores WMS y ERP nativos",
-      "Sincronización bidireccional",
-      "Manejo de excepciones con alertas",
-      "Dashboard de estado en tiempo real",
-    ],
-    color: "navy",
+    id: "automatiza",
+    title: "Automatiza procesos",
+    blurb: "Elimina el trabajo manual repetitivo con flujos confiables.",
   },
   {
-    id: "agentes-ia",
-    icon: "ai",
-    title: "Agentes IA con Aprobaciones",
-    subtitle: "WhatsApp / Email como canal",
-    description:
-      "Agentes de inteligencia artificial que ejecutan tareas complejas pero piden aprobación humana en los puntos críticos. El aprobador responde por WhatsApp o Email; el sistema registra evidencia.",
-    features: [
-      "Agentes LLM con tools personalizados",
-      "Flujo de aprobación multi-nivel",
-      "Notificaciones por WhatsApp y Email",
-      "Registro de decisiones con timestamp",
-      "Rollback automático ante rechazo",
-    ],
-    color: "teal",
+    id: "integra",
+    title: "Integra sistemas (incl. sin API · RPA)",
+    blurb: "Conecta lo que no se deja: WMS, ERP y sistemas legados.",
   },
   {
-    id: "dashboards",
-    icon: "dashboard",
-    title: "Dashboards & Observabilidad",
-    subtitle: "Visibilidad total de tus operaciones",
-    description:
-      "Construimos dashboards operacionales conectados a tus datos reales. Alertas, métricas de proceso y trazabilidad completa para que tu equipo tome decisiones con información, no con suposiciones.",
-    features: [
-      "Dashboards en tiempo real",
-      "Alertas configurables por umbral",
-      "Trazabilidad de cada operación",
-      "Exportación a PDF / Excel",
-      "Acceso por roles y permisos",
-    ],
-    color: "navy",
+    id: "ia",
+    title: "Adopta IA con control",
+    blurb: "Agentes y modelos con aprobación humana y evidencia.",
+  },
+  {
+    id: "productos",
+    title: "Construye productos digitales",
+    blurb: "Del prototipo al producto: web, móvil y cloud.",
+  },
+  {
+    id: "datos",
+    title: "Datos & analítica",
+    blurb: "Datos limpios, integrados y listos para decidir (y para IA).",
   },
 ];
 
-// Industrias
+// ------------------------------------------------------------
+// SERVICIOS (capacidades) — `icon` mapea a un ícono en ui/Icon.tsx
+// ------------------------------------------------------------
+export const SERVICES = [
+  {
+    id: "desarrollo",
+    icon: "dev",
+    title: "Desarrollo de software a medida",
+    description:
+      "Aplicaciones web, móviles y de escritorio diseñadas alrededor de tu operación — no plantillas genéricas.",
+    features: ["Web · móvil · cloud", "APIs y back-ends", "Arquitectura escalable"],
+  },
+  {
+    id: "integraciones",
+    icon: "link",
+    title: "Integraciones & RPA",
+    description:
+      "Conectamos tus sistemas aunque no tengan API: RPA que lee pantallas, extrae datos y sincroniza con tu WMS o ERP.",
+    features: ["WMS / ERP", "RPA donde no hay API", "Sincronización confiable"],
+  },
+  {
+    id: "ia",
+    icon: "ai",
+    title: "Ingeniería de IA & agentes",
+    description:
+      "Agentes y modelos LLM que ejecutan tareas complejas pidiendo aprobación humana en los puntos críticos, con evidencia.",
+    features: ["Agentes con tools", "Aprobaciones + auditoría", "RAG sobre tus datos"],
+  },
+  {
+    id: "data",
+    icon: "data",
+    title: "Data engineering & analítica",
+    description:
+      "Limpiamos, integramos y estructuramos tus datos para que sean confiables — base de toda decisión y de la IA.",
+    features: ["Pipelines y ETL", "Datos listos para IA", "Modelado y calidad"],
+  },
+  {
+    id: "observabilidad",
+    icon: "dash",
+    title: "Dashboards & observabilidad",
+    description:
+      "Tableros conectados a tus datos reales, con alertas y trazabilidad para decidir con información, no con suposiciones.",
+    features: ["Tiempo real", "Alertas por umbral", "Trazabilidad por operación"],
+  },
+  {
+    id: "calidad",
+    icon: "shield",
+    title: "QA, DevSecOps & cloud",
+    description:
+      "Pruebas, despliegue continuo y seguridad para que lo que construimos llegue a producción y se mantenga estable.",
+    features: ["QA & testing", "CI/CD", "Cloud AWS · GCP · Azure"],
+  },
+];
+
+// ------------------------------------------------------------
+// INDUSTRIAS
+// ------------------------------------------------------------
 export const INDUSTRIES = [
   {
     id: "logistica",
-    icon: "🏭",
-    title: "Logística y Supply Chain",
+    title: "Logística & Supply Chain",
     description:
-      "Automatización de recepción, despacho y trazabilidad en centros de distribución.",
+      "Recepción, despacho y trazabilidad en centros de distribución.",
   },
   {
     id: "retail",
-    icon: "🛍️",
-    title: "Retail y Comercio",
+    title: "Retail & Comercio",
     description:
       "Sincronización de inventarios, órdenes y precios entre sistemas heterogéneos.",
   },
   {
     id: "manufactura",
-    icon: "⚙️",
     title: "Manufactura",
     description:
-      "Control de producción, calidad y reporting automatizado para plantas industriales.",
+      "Control de producción, calidad y reporting automatizado para plantas.",
   },
   {
     id: "finanzas",
-    icon: "📊",
     title: "Servicios Financieros",
     description:
-      "Automatización de conciliaciones, reportes regulatorios y flujos de aprobación.",
+      "Conciliaciones, reportes regulatorios y flujos de aprobación.",
   },
   {
     id: "salud",
-    icon: "🏥",
-    title: "Salud y Farmacia",
+    title: "Salud & Farmacia",
     description:
-      "Gestión documental, trazabilidad de lotes y alertas de cumplimiento normativo.",
+      "Gestión documental, trazabilidad de lotes y cumplimiento normativo.",
   },
   {
     id: "gobierno",
-    icon: "🏛️",
-    title: "Gobierno y Sector Público",
+    title: "Gobierno & Sector Público",
     description:
-      "Digitalización de procesos internos, integración con ChileAtiende y plataformas GDE.",
+      "Digitalización de procesos e integración con plataformas estatales.",
   },
 ];
 
-// Casos de éxito
+// ------------------------------------------------------------
+// CASOS — representativos y honestos (sin métricas inventadas)
+// ------------------------------------------------------------
+export const CASES_NOTE =
+  "Ejemplos representativos del tipo de proyectos que ejecutamos. Casos con cliente y resultados verificados, disponibles bajo NDA.";
+
 export const CASES = [
   {
-    id: "validacion-documental",
-    metric: "-70%",
-    metricLabel: "errores documentales",
-    title: "Validación automática de recepciones",
+    id: "recepciones",
+    title: "Validación automática de recepciones documentales",
     industry: "Logística",
-    description:
-      "Una empresa de distribución procesaba facturas de proveedor manualmente. Implementamos un Control Tower que captura, compara y valida cada documento contra el ERP antes de aprobar el pago. Los errores de recepción cayeron un 70% en el primer mes.",
-    tags: ["Control Tower", "RPA", "ERP"],
+    summary:
+      "Captura de documentos, normalización y comparación contra el ERP, con una compuerta de aprobación antes de cada pago. Menos errores silenciosos y trazabilidad completa.",
+    tags: ["Automatización", "RPA", "ERP"],
   },
   {
-    id: "integracion-wms",
-    metric: "+3x",
-    metricLabel: "velocidad de despacho",
-    title: "Integración WMS sin API disponible",
+    id: "wms",
+    title: "Integración con un WMS sin API disponible",
     industry: "Retail",
-    description:
-      "El WMS legado no tenía API REST. Construimos un conector RPA que lee la pantalla, extrae órdenes de despacho y las sincroniza con el sistema de courier en tiempo real. La capacidad de despacho se triplicó sin cambiar el WMS.",
-    tags: ["RPA", "WMS", "Integración"],
+    summary:
+      "Conector RPA que lee la interfaz del WMS legado, extrae órdenes de despacho y las sincroniza con el sistema de courier — sin reemplazar el WMS.",
+    tags: ["Integración", "RPA", "WMS"],
   },
   {
-    id: "agentes-aprobacion",
-    metric: "100%",
-    metricLabel: "trazabilidad de decisiones",
-    title: "Sistema de aprobaciones con evidencia",
+    id: "aprobaciones",
+    title: "Aprobaciones con evidencia por WhatsApp",
     industry: "Manufactura",
-    description:
-      "Los gerentes aprobaban excepciones de calidad por WhatsApp sin registro. Construimos un agente IA que gestiona el flujo, solicita aprobación, registra la respuesta con timestamp y genera un informe de auditoría automático.",
-    tags: ["Agente IA", "WhatsApp", "Auditoría"],
+    summary:
+      "Un agente gestiona el flujo de excepciones: solicita aprobación, registra la respuesta con fecha y hora, y genera un informe de auditoría automático.",
+    tags: ["Agentes IA", "Aprobaciones", "Auditoría"],
   },
 ];
 
+// ------------------------------------------------------------
 // FAQ
+// ------------------------------------------------------------
 export const FAQ = [
   {
     q: "¿Trabajan con empresas pequeñas o solo con grandes corporaciones?",
-    a: "Trabajamos con empresas desde 10 hasta miles de empleados. Lo que importa es que tengas un proceso repetitivo con fricción: ahí es donde generamos valor real, sin importar el tamaño.",
+    a: "Con ambas. Lo que importa es que tengas un proceso con fricción o un sistema que construir: ahí generamos valor real, sin importar el tamaño.",
   },
   {
     q: "¿Cuánto demora un proyecto típico?",
-    a: "Un piloto funcional generalmente está listo en 4 a 8 semanas. Primero mostramos resultados en un proceso acotado; luego escalamos. No hacemos promesas vacías ni proyectos de 18 meses sin entregables.",
+    a: "Un piloto funcional suele estar listo en 4 a 8 semanas. Primero mostramos resultados en un alcance acotado; luego escalamos. Sin proyectos de 18 meses sin entregables.",
   },
   {
-    q: "¿Necesito tener un equipo técnico interno?",
-    a: "No es requisito. Nos integramos con lo que tienes: desde un equipo de TI robusto hasta solo un encargado de operaciones. Documentamos todo y dejamos el sistema operable por personas no técnicas.",
+    q: "¿Necesito un equipo técnico interno?",
+    a: "No es requisito. Nos integramos con lo que tengas, documentamos todo y dejamos el sistema operable por personas no técnicas.",
   },
   {
     q: "¿Qué pasa si mi sistema no tiene API?",
-    a: "Usamos RPA (automatización robótica de procesos) para interactuar con interfaces de usuario. Si tiene pantalla, podemos automatizarlo.",
+    a: "Usamos RPA para interactuar con la interfaz de usuario. Si tiene pantalla, podemos automatizarlo e integrarlo.",
   },
   {
     q: "¿Cómo manejan la seguridad de nuestros datos?",
-    a: "Los sistemas se despliegan en la infraestructura del cliente o en nubes dedicadas (AWS/GCP/Azure). Nunca almacenamos datos de producción en nuestros servidores sin autorización explícita. Entregamos un documento de arquitectura de seguridad antes del inicio.",
+    a: "Desplegamos en tu infraestructura o en nubes dedicadas (AWS/GCP/Azure). No almacenamos datos de producción sin autorización explícita y entregamos un documento de arquitectura de seguridad antes de iniciar.",
   },
   {
     q: "¿Ofrecen soporte post-entrega?",
-    a: "Sí. Incluimos 30 días de soporte gratuito post-lanzamiento. Luego ofrecemos planes de mantención mensual con SLA definido, monitoreo y mejoras iterativas.",
+    a: "Sí. Incluimos soporte post-lanzamiento y ofrecemos planes de mantención con SLA definido, monitoreo y mejoras iterativas.",
   },
 ];
 
-// Tech Stack (agrupado)
+// ------------------------------------------------------------
+// TECH STACK
+// ------------------------------------------------------------
 export const TECH_STACK = [
   {
     category: "Backend & APIs",
-    items: ["Python", "Node.js", "FastAPI", "Express", "REST / GraphQL"],
+    items: ["Python", "Node.js", "FastAPI", "REST / GraphQL"],
   },
   {
     category: "Frontend",
@@ -210,18 +245,18 @@ export const TECH_STACK = [
   },
   {
     category: "IA & LLM",
-    items: ["OpenAI GPT-4o", "Anthropic Claude", "LangChain", "LlamaIndex"],
+    items: ["Anthropic Claude", "OpenAI", "RAG", "Agentes con tools"],
   },
   {
-    category: "Automatización",
-    items: ["n8n", "Make (Integromat)", "Power Automate", "UiPath RPA"],
+    category: "Automatización & RPA",
+    items: ["RPA de interfaz", "n8n", "Make", "Power Automate"],
   },
   {
-    category: "Bases de Datos",
-    items: ["PostgreSQL", "MongoDB", "Redis", "SQL Server"],
+    category: "Datos",
+    items: ["PostgreSQL", "SQL Server", "Pipelines / ETL", "Analytics"],
   },
   {
     category: "Cloud & DevOps",
-    items: ["AWS", "GCP", "Azure", "Docker", "GitHub Actions"],
+    items: ["AWS", "GCP", "Azure", "Docker", "CI/CD"],
   },
 ];

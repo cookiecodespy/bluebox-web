@@ -3,12 +3,17 @@ export interface NavItem {
   href: string;
 }
 
+// Navegación principal (header)
 export const NAV_ITEMS: NavItem[] = [
-  { label: "Inicio", href: "/" },
-  { label: "Nosotros", href: "/nosotros" },
+  { label: "Soluciones", href: "/#soluciones" },
   { label: "Servicios", href: "/servicios" },
   { label: "Industrias", href: "/industrias" },
-  { label: "Tecnología", href: "/tecnologia" },
   { label: "Casos", href: "/casos" },
+  { label: "Nosotros", href: "/nosotros" },
   { label: "Contacto", href: "/contacto" },
+];
+
+// Links adicionales solo en el footer
+export const FOOTER_EXTRA: NavItem[] = [
+  { label: "Tecnología", href: "/tecnologia" },
 ];

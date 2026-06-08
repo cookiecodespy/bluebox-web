@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "./constants";
+import { SITE_NAME, SITE_TAGLINE, SITE_DESCRIPTION, SITE_URL } from "./constants";
 
 export function buildMetadata(overrides?: Partial<Metadata>): Metadata {
   const title = overrides?.title
     ? `${overrides.title} | ${SITE_NAME}`
-    : `${SITE_NAME} – Software a medida. Automatización real.`;
+    : `${SITE_NAME} – ${SITE_TAGLINE}`;
 
   const description =
     typeof overrides?.description === "string"
@@ -24,10 +24,10 @@ export function buildMetadata(overrides?: Partial<Metadata>): Metadata {
       type: "website",
       images: [
         {
-          url: "/images/og-default.png",
-          width: 1200,
-          height: 630,
-          alt: `${SITE_NAME} – Software a medida`,
+          url: "/images/bluebox-logo.png",
+          width: 1310,
+          height: 1200,
+          alt: `${SITE_NAME} — ${SITE_TAGLINE}`,
         },
       ],
     },
@@ -39,6 +39,10 @@ export function buildMetadata(overrides?: Partial<Metadata>): Metadata {
     robots: {
       index: true,
       follow: true,
+    },
+    icons: {
+      icon: "/images/bluebox-logo.png",
+      apple: "/images/bluebox-logo.png",
     },
     ...overrides,
   };

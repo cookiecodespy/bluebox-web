@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BlueBox — hero mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2ECE0;          /* marfil cálido */
+  --paper-2:#EAE2D2;        /* panel */
+  --ink:#171410;            /* tinta cálida casi negra */
+  --ink-soft:#6B6458;       /* texto muteado */
+  --line:rgba(23,20,16,.16);
+  --line-2:rgba(23,20,16,.08);
+  --accent:#1B36FF;         /* cobalto (default) */
+  --accent-ink:#FFFFFF;     /* texto sobre acento */
+  --accent-soft:rgba(27,54,255,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility }
+body{
+  font-family:"Hanken Grotesk",sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  min-height:100vh;
+  position:relative;
+  overflow-x:hidden;
+}
+/* atmósfera: retícula punteada + glow de acento + grano */
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+.bg .dots{
+  position:absolute;inset:0;
+  background-image:radial-gradient(var(--line-2) 1.1px, transparent 1.1px);
+  background-size:26px 26px;
+  mask-image:radial-gradient(120% 90% at 70% 0%, #000 35%, transparent 78%);
+  -webkit-mask-image:radial-gradient(120% 90% at 70% 0%, #000 35%, transparent 78%);
+}
+.bg .glow{
+  position:absolute;top:-22%;right:-12%;width:780px;height:780px;
+  background:radial-gradient(circle at center, var(--accent-soft), transparent 62%);
+  filter:blur(8px);
+}
+.bg .grain{
+  position:absolute;inset:0;opacity:.05;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 48px}
+
+/* ---------- NAV ---------- */
+nav{display:flex;align-items:center;justify-content:space-between;height:84px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:11px;font-family:"Schibsted Grotesk";font-weight:700;letter-spacing:-.01em;font-size:20px}
+.brand .mark{width:22px;height:22px;position:relative;display:inline-block}
+.brand .mark i{position:absolute;width:9px;height:9px;border:1.6px solid var(--ink)}
+.brand .mark i:nth-child(1){top:0;left:0}
+.brand .mark i:nth-child(2){top:0;right:0;border-color:var(--accent);background:var(--accent)}
+.brand .mark i:nth-child(3){bottom:0;left:0}
+.brand .mark i:nth-child(4){bottom:0;right:0}
+.brand b{font-weight:700}
+.brand span{font-weight:500;color:var(--ink)}
+.navlinks{display:flex;gap:34px;align-items:center}
+.navlinks a{color:var(--ink);text-decoration:none;font-size:14.5px;font-weight:500;letter-spacing:.01em;opacity:.82}
+.navlinks a:hover{opacity:1}
+.navlinks a.nav-cta{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:var(--paper);
+  font-weight:600;font-size:14px;padding:11px 20px;border-radius:999px;text-decoration:none;opacity:1}
+.nav-cta .dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+/* ---------- HERO ---------- */
+.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:72px;align-items:center;padding:78px 0 60px}
+.kicker{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:12px;margin-bottom:30px}
+.kicker .tick{width:26px;height:1px;background:var(--accent);display:inline-block}
+.kicker b{color:var(--ink);font-weight:500}
+h1{font-family:"Schibsted Grotesk";font-weight:500;font-size:67px;line-height:1.015;letter-spacing:-.025em;color:var(--ink);max-width:14ch}
+h1 .em{font-style:normal;color:var(--accent);position:relative;white-space:nowrap}
+h1 .em::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.5px;background:var(--accent);opacity:.45}
+.sub{font-size:18.5px;line-height:1.55;color:var(--ink-soft);max-width:47ch;margin-top:26px;font-weight:400}
+.sub b{color:var(--ink);font-weight:600}
+.cta-row{display:flex;align-items:center;gap:22px;margin-top:38px}
+.btn-primary{display:inline-flex;align-items:center;gap:11px;background:var(--accent);color:var(--accent-ink);
+  font-weight:600;font-size:15.5px;padding:15px 26px;border-radius:999px;text-decoration:none;letter-spacing:.005em}
+.btn-primary svg{transition:transform .25s}
+.btn-ghost{display:inline-flex;align-items:center;gap:9px;color:var(--ink);font-weight:600;font-size:15.5px;text-decoration:none;border-bottom:1.5px solid var(--ink)}
+.btn-ghost .ar{color:var(--accent)}
+/* tira de credibilidad */
+.cred{display:flex;gap:0;margin-top:54px;border-top:1px solid var(--line);padding-top:22px}
+.cred .item{padding-right:34px;margin-right:34px;border-right:1px solid var(--line-2)}
+.cred .item:last-child{border-right:none}
+.cred .v{font-family:"Schibsted Grotesk";font-weight:600;font-size:23px;letter-spacing:-.02em}
+.cred .l{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:5px}
+
+/* ---------- PANEL "dossier" 01–06 ---------- */
+.panel{background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:26px 26px 12px;position:relative;box-shadow:0 1px 0 rgba(255,255,255,.5) inset, 0 18px 40px -28px rgba(23,20,16,.45)}
+.panel .corner{position:absolute;top:16px;right:18px;font-family:"IBM Plex Mono";font-size:10.5px;letter-spacing:.12em;color:var(--ink-soft);opacity:.7}
+.panel .phead{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.panel .phead .t{font-family:"IBM Plex Mono";font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+.panel .phead .c{font-family:"Schibsted Grotesk";font-weight:600;font-size:13px;color:var(--ink)}
+.row{display:flex;align-items:center;gap:16px;padding:14px 4px;border-bottom:1px solid var(--line-2)}
+.row:last-child{border-bottom:none}
+.row .ix{font-family:"IBM Plex Mono";font-size:12.5px;color:var(--accent);width:24px;font-weight:500}
+.row .nm{font-weight:500;font-size:16px;flex:1;letter-spacing:-.005em}
+.row .ic{width:18px;height:18px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:2px;opacity:.5}
+.row .ic span{background:var(--ink);border-radius:1px}
+.row .ic span.a{background:var(--accent)}
+.row .ar{color:var(--ink-soft);font-size:15px;opacity:.55}
+.row:hover .ar{color:var(--accent);opacity:1}
+
+/* index de página, esquina */
+.pageix{position:fixed;left:48px;bottom:26px;z-index:1;font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.14em;color:var(--ink-soft);opacity:.7}
+.pageix2{position:fixed;right:48px;bottom:26px;z-index:1;font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.14em;color:var(--ink-soft);opacity:.7}
+</style>
+</head>
+<body>
+<div class="bg"><div class="glow"></div><div class="dots"></div><div class="grain"></div></div>
+
+<div class="wrap">
+  <nav>
+    <div class="brand">
+      <span class="mark"><i></i><i></i><i></i><i></i></span>
+      <span><b>BLUE</b>BOX</span>
+    </div>
+    <div class="navlinks">
+      <a href="#">Soluciones</a>
+      <a href="#">Servicios</a>
+      <a href="#">Industrias</a>
+      <a href="#">Casos</a>
+      <a href="#">Nosotros</a>
+      <a href="#" class="nav-cta"><span class="dot"></span>Conversemos</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="left">
+      <div class="kicker"><span class="tick"></span><b>EMPRESA CHILENA DE INGENIERÍA DE SOFTWARE</b> · DESDE 2014</div>
+      <h1>Ingeniería de software en la que tu operación <span class="em">confía</span>.</h1>
+      <p class="sub">Desarrollo a medida, integraciones, automatización y <b>datos listos para IA</b> — con la responsabilidad de una empresa formal: SLA, contratos y trazabilidad. Para Chile, LATAM y EE.&nbsp;UU.</p>
+      <div class="cta-row">
+        <a href="#" class="btn-primary">Agenda un diagnóstico
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h9M8 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#" class="btn-ghost">Ver lo que hacemos <span class="ar">↓</span></a>
+      </div>
+      <div class="cred">
+        <div class="item"><div class="v">+10 años</div><div class="l">trayectoria formal</div></div>
+        <div class="item"><div class="v">Chile</div><div class="l">equipo · zona horaria EE.UU.</div></div>
+        <div class="item"><div class="v">SLA</div><div class="l">contratos · Ley 19.628</div></div>
+      </div>
+    </div>
+
+    <aside class="panel">
+      <div class="corner">BB—SOL</div>
+      <div class="phead"><div class="t">Qué hacemos</div><div class="c">06 soluciones</div></div>
+      <div class="row"><span class="ix">01</span><span class="nm">Moderniza sistemas legados</span><span class="ic"><span></span><span class="a"></span><span></span><span></span><span></span><span></span><span class="a"></span><span></span><span></span></span><span class="ar">→</span></div>
+      <div class="row"><span class="ix">02</span><span class="nm">Automatiza procesos</span><span class="ic"><span></span><span></span><span class="a"></span><span></span><span class="a"></span><span></span><span></span><span></span><span></span></span><span class="ar">→</span></div>
+      <div class="row"><span class="ix">03</span><span class="nm">Integra sistemas (incl. sin API · RPA)</span><span class="ic"><span class="a"></span><span></span><span></span><span></span><span class="a"></span><span></span><span></span><span></span><span class="a"></span></span><span class="ar">→</span></div>
+      <div class="row"><span class="ix">04</span><span class="nm">Adopta IA con control</span><span class="ic"><span></span><span class="a"></span><span></span><span class="a"></span><span></span><span class="a"></span><span></span><span class="a"></span><span></span></span><span class="ar">→</span></div>
+      <div class="row"><span class="ix">05</span><span class="nm">Construye productos digitales</span><span class="ic"><span></span><span></span><span></span><span class="a"></span><span class="a"></span><span class="a"></span><span></span><span></span><span></span></span><span class="ar">→</span></div>
+      <div class="row"><span class="ix">06</span><span class="nm">Datos &amp; analítica</span><span class="ic"><span class="a"></span><span></span><span class="a"></span><span></span><span class="a"></span><span></span><span class="a"></span><span></span><span class="a"></span></span><span class="ar">→</span></div>
+    </aside>
+  </section>
+</div>
+
+<div class="pageix">BLUEBOX · INGENIERÍA</div>
+<div class="pageix2">001 / HERO</div>
+</body>
+</html>

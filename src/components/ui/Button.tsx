@@ -20,20 +20,16 @@ interface ButtonProps {
 }
 
 const variantClasses: Record<Variant, string> = {
-  primary:
-    "bg-blue-700 hover:bg-blue-800 text-white shadow-lg shadow-blue-700/25 border border-blue-600",
-  secondary:
-    "bg-transparent border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white",
-  ghost:
-    "bg-transparent text-slate-700 hover:text-blue-700 hover:bg-blue-50 border border-transparent",
-  whatsapp:
-    "bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg shadow-emerald-500/30 border border-emerald-400",
+  primary: "bg-cobalt text-white hover:bg-cobalt-deep",
+  secondary: "border border-ink/80 text-ink hover:bg-ink hover:text-paper",
+  ghost: "text-ink hover:text-cobalt",
+  whatsapp: "bg-ink text-paper hover:opacity-90",
 };
 
 const sizeClasses: Record<Size, string> = {
-  sm: "px-4 py-2 text-sm rounded-lg",
-  md: "px-6 py-2.5 text-base rounded-xl",
-  lg: "px-8 py-3.5 text-lg rounded-xl",
+  sm: "px-4 py-2 text-sm",
+  md: "px-5 py-2.5 text-[15px]",
+  lg: "px-6 py-3 text-base",
 };
 
 export function Button({
@@ -49,7 +45,7 @@ export function Button({
   fullWidth = false,
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer";
+    "inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cobalt focus-visible:ring-offset-2 focus-visible:ring-offset-paper cursor-pointer";
   const classes = [
     base,
     variantClasses[variant],
@@ -64,12 +60,7 @@ export function Button({
   if (href) {
     if (external) {
       return (
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={classes}
-        >
+        <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
           {children}
         </a>
       );
