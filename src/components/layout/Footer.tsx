@@ -19,7 +19,7 @@ export function Footer() {
         <div className="mb-14 grid grid-cols-1 gap-12 md:grid-cols-4">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Wordmark dark />
+            <Wordmark />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-paper/55">
               Ingeniería de software de extremo a extremo. Empresa chilena formal —
               SLA, contratos y trazabilidad — para Chile, LATAM y EE.&nbsp;UU.

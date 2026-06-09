@@ -31,7 +31,7 @@ export function Header() {
     >
       <nav className="mx-auto flex h-[78px] max-w-[1240px] items-center justify-between px-5 sm:px-8 lg:px-10">
         <Link href="/" aria-label="BlueBox — inicio">
-          <Wordmark dark={overHero} />
+          <Wordmark />
         </Link>
 
         <ul className="hidden items-center gap-8 lg:flex">

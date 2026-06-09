@@ -108,7 +108,7 @@ export function Hero() {
           {SOLUTIONS.map((s, i) => (
             <Link
               key={s.id}
-              href="/#soluciones"
+              href={`/soluciones/${s.id}`}
               className="group flex items-center gap-4 border-b border-white/[0.07] py-3.5 last:border-none"
             >
               <span className="mono w-6 text-[12.5px] font-medium text-[#6d8bff]">

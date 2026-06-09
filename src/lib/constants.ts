@@ -44,31 +44,79 @@ export const SOLUTIONS = [
     id: "moderniza",
     title: "Moderniza sistemas legados",
     blurb: "Renueva plataformas antiguas sin frenar la operación.",
+    intro:
+      "Tus sistemas viejos no tienen que ser un freno. Los modernizamos por partes, sin apagar la operación, hasta dejarlos escalables y mantenibles.",
+    bullets: [
+      "Mapeo de la arquitectura actual y sus dependencias",
+      "Migración incremental, sin big-bang ni downtime",
+      "Reemplazo de tecnología obsoleta por stack moderno",
+      "Documentación para que tu equipo lo mantenga",
+    ],
   },
   {
     id: "automatiza",
     title: "Automatiza procesos",
     blurb: "Elimina el trabajo manual repetitivo con flujos confiables.",
+    intro:
+      "Si tu equipo copia datos de una pantalla a otra, hay algo que automatizar. Convertimos esos procesos manuales en flujos confiables y trazables.",
+    bullets: [
+      "Identificación de procesos con mayor fricción",
+      "Flujos con manejo de excepciones y alertas",
+      "Aprobaciones humanas en los puntos críticos",
+      "Trazabilidad completa de cada ejecución",
+    ],
   },
   {
     id: "integra",
     title: "Integra sistemas (incl. sin API · RPA)",
     blurb: "Conecta lo que no se deja: WMS, ERP y sistemas legados.",
+    intro:
+      "¿No hay API? No importa. Conectamos tus sistemas con RPA cuando los conectores estándar fallan, para que dejen de vivir en islas.",
+    bullets: [
+      "Conectores WMS / ERP nativos",
+      "RPA de interfaz cuando no existe API",
+      "Sincronización bidireccional confiable",
+      "Manejo de excepciones con alertas",
+    ],
   },
   {
     id: "ia",
     title: "Adopta IA con control",
     blurb: "Agentes y modelos con aprobación humana y evidencia.",
+    intro:
+      "La IA sirve cuando puedes confiar en ella. Construimos agentes que ejecutan, piden aprobación en lo crítico y registran evidencia de cada decisión.",
+    bullets: [
+      "Agentes LLM con herramientas a medida",
+      "Flujo de aprobación multinivel",
+      "RAG sobre tus propios datos",
+      "Registro de decisiones con timestamp",
+    ],
   },
   {
     id: "productos",
     title: "Construye productos digitales",
     blurb: "Del prototipo al producto: web, móvil y cloud.",
+    intro:
+      "Del prototipo al producto en producción. Diseñamos y construimos aplicaciones web y móviles alrededor de tu operación, no de una plantilla.",
+    bullets: [
+      "Web, móvil y aplicaciones cloud",
+      "Diseño UX/UI a medida",
+      "Arquitectura escalable",
+      "Despliegue y soporte continuo",
+    ],
   },
   {
     id: "datos",
     title: "Datos & analítica",
     blurb: "Datos limpios, integrados y listos para decidir (y para IA).",
+    intro:
+      "Tus decisiones valen lo que valen tus datos. Los limpiamos, integramos y estructuramos para que sean confiables — y la base de toda IA.",
+    bullets: [
+      "Pipelines y procesos ETL",
+      "Datos limpios y listos para IA",
+      "Dashboards y observabilidad",
+      "Modelado y calidad de datos",
+    ],
   },
 ];
 

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { OpsDashboard } from "@/components/fx/OpsDashboard";
+import { Parallax } from "@/components/fx/Parallax";
 
 const POINTS = [
   "Métricas y alertas conectadas a tus datos reales",
@@ -44,7 +45,9 @@ export function DashboardShowcase() {
           </Link>
         </div>
 
-        <OpsDashboard />
+        <Parallax amount={26}>
+          <OpsDashboard />
+        </Parallax>
       </div>
     </section>
   );

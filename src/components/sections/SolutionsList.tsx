@@ -21,7 +21,7 @@ export function SolutionsList() {
           {SOLUTIONS.map((s, i) => (
             <Reveal key={s.id} delay={(i % 2) * 80}>
               <Link
-                href="/servicios"
+                href={`/soluciones/${s.id}`}
                 className="group flex items-start gap-5 border-b border-line py-7"
               >
                 <span className="mono pt-1 text-[13px] font-medium text-cobalt">

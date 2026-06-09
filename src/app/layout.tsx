@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CTASticky } from "@/components/layout/CTASticky";
 import { SmoothScroll } from "@/components/fx/SmoothScroll";
+import { ScrollProgress } from "@/components/fx/ScrollProgress";
 import { buildMetadata } from "@/lib/metadata";
 
 // Display / títulos — grotesca con carácter, peso medio (no Geist/Inter)
@@ -50,6 +51,7 @@ export default function RootLayout({
         className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
       >
         <SmoothScroll />
+        <ScrollProgress />
         <Header />
         <main>{children}</main>
         <Footer />
