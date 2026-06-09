@@ -24,8 +24,8 @@ export function SolutionsList() {
                 href={`/soluciones/${s.id}`}
                 className="group flex items-start gap-5 border-b border-line py-7"
               >
-                <span className="mono pt-1 text-[13px] font-medium text-cobalt">
-                  {String(i + 1).padStart(2, "0")}
+                <span className="grid h-11 w-11 flex-shrink-0 place-items-center rounded-xl border border-line bg-paper text-cobalt transition-colors group-hover:border-cobalt/40 group-hover:bg-cobalt/[0.06]">
+                  <Icon name={s.id} className="h-5 w-5" />
                 </span>
                 <div className="flex-1">
                   <h3 className="font-display text-xl font-medium tracking-[-0.01em] text-ink transition-colors group-hover:text-cobalt">
@@ -35,14 +35,9 @@ export function SolutionsList() {
                     {s.blurb}
                   </p>
                 </div>
-                <div className="mt-0.5 flex items-center gap-4">
-                  <span className="grid h-10 w-10 place-items-center rounded-xl border border-line bg-paper text-cobalt transition-colors group-hover:border-cobalt/40 group-hover:bg-cobalt/[0.06]">
-                    <Icon name={s.id} className="h-[19px] w-[19px]" />
-                  </span>
-                  <span className="text-ink-mute transition-all group-hover:translate-x-0.5 group-hover:text-cobalt">
-                    →
-                  </span>
-                </div>
+                <span className="mt-1 text-ink-mute transition-all group-hover:translate-x-0.5 group-hover:text-cobalt">
+                  →
+                </span>
               </Link>
             </Reveal>
           ))}

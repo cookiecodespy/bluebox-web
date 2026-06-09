@@ -34,11 +34,8 @@ export function CaseStudies() {
                   ratio="aspect-[16/10]"
                   className="mb-6"
                 />
-                <div className="mb-5 flex items-center justify-between">
+                <div className="mb-5">
                   <Badge variant="accent">{c.industry}</Badge>
-                  <span className="mono text-[12px] text-ink-mute">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
                 </div>
                 <h3 className="font-display text-[19px] font-medium leading-snug tracking-[-0.01em] text-ink">
                   {c.title}

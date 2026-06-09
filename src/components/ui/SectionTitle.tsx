@@ -10,7 +10,6 @@ interface SectionTitleProps {
 
 export function SectionTitle({
   eyebrow,
-  index,
   title,
   highlight,
   description,
@@ -35,15 +34,14 @@ export function SectionTitle({
 
   return (
     <div className={`${align} max-w-3xl ${centered ? "mx-auto" : ""} mb-14`}>
-      {(eyebrow || index) && (
+      {eyebrow && (
         <p
           className={`kicker mb-5 flex items-center gap-3 ${
             centered ? "justify-center" : ""
           } ${light ? "!text-paper/60" : ""}`}
         >
-          {index && <span className="text-cobalt">{index}</span>}
-          {index && eyebrow && <span className="h-px w-6 bg-cobalt" />}
-          {eyebrow && <span>{eyebrow}</span>}
+          <span className="inline-block h-px w-6 bg-cobalt" />
+          <span>{eyebrow}</span>
         </p>
       )}
       <h2

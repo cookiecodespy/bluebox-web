@@ -103,19 +103,16 @@ export function Hero() {
               </span>
               Qué hacemos
             </span>
-            <span className="mono text-[11px] text-paper/40">06 / SOLUCIONES</span>
+            <span className="mono text-[11px] text-paper/40">SOLUCIONES</span>
           </div>
-          {SOLUTIONS.map((s, i) => (
+          {SOLUTIONS.map((s) => (
             <Link
               key={s.id}
               href={`/soluciones/${s.id}`}
-              className="group flex items-center gap-4 border-b border-white/[0.07] py-3.5 last:border-none"
+              className="group flex items-center gap-3.5 border-b border-white/[0.07] py-3.5 last:border-none"
             >
-              <span className="mono w-6 text-[12.5px] font-medium text-[#6d8bff]">
-                {String(i + 1).padStart(2, "0")}
-              </span>
+              <Icon name={s.id} className="h-[18px] w-[18px] flex-shrink-0 text-[#6d8bff]" />
               <span className="flex-1 text-[15.5px] font-medium text-paper/90">{s.title}</span>
-              <Icon name={s.id} className="h-[18px] w-[18px] text-[#6d8bff]" />
               <span className="text-paper/30 transition-all group-hover:translate-x-0.5 group-hover:text-cobalt">→</span>
             </Link>
           ))}

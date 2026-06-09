@@ -19,14 +19,9 @@ export function IndustriesGrid() {
           {INDUSTRIES.map((ind, i) => (
             <Reveal key={ind.id} delay={(i % 3) * 80}>
               <div className="group h-full rounded-[14px] border border-line bg-paper p-6 transition-colors hover:border-ink/20">
-                <div className="flex items-center justify-between">
-                  <span className="grid h-11 w-11 place-items-center rounded-xl border border-line text-cobalt transition-colors group-hover:border-cobalt/40 group-hover:bg-cobalt/[0.06]">
-                    <Icon name={ind.id} className="h-5 w-5" />
-                  </span>
-                  <span className="mono text-[12px] text-ink-mute">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
+                <span className="inline-grid h-11 w-11 place-items-center rounded-xl border border-line text-cobalt transition-colors group-hover:border-cobalt/40 group-hover:bg-cobalt/[0.06]">
+                  <Icon name={ind.id} className="h-5 w-5" />
+                </span>
                 <h3 className="mt-4 font-display text-[18px] font-medium tracking-[-0.01em] text-ink transition-colors group-hover:text-cobalt">
                   {ind.title}
                 </h3>
