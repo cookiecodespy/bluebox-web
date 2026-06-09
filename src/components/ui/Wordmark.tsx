@@ -9,7 +9,7 @@ export function Wordmark({ className = "" }: { className?: string }) {
       alt="BlueBox — Custom Software"
       width={120}
       height={110}
-      className={`h-10 w-auto rounded-md ${className}`}
+      className={`h-14 w-auto rounded-lg ${className}`}
     />
   );
 }

@@ -1,0 +1,4 @@
+Contact: mailto:contacto@bluebox.cl
+Preferred-Languages: es, en
+Expires: 2027-06-09T00:00:00.000Z
+# Reporte responsable de vulnerabilidades — BlueBox

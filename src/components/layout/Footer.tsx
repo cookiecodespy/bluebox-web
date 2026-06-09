@@ -105,7 +105,12 @@ export function Footer() {
 
         <div className="flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 font-mono text-xs text-paper/40 sm:flex-row sm:items-center">
           <p>© {year} {SITE_NAME} · Todos los derechos reservados</p>
-          <p>Hecho en Chile</p>
+          <div className="flex items-center gap-5">
+            <Link href="/privacidad" className="transition-colors hover:text-paper">
+              Privacidad
+            </Link>
+            <span>Hecho en Chile</span>
+          </div>
         </div>
       </div>
     </footer>

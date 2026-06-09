@@ -50,10 +50,16 @@ export default function RootLayout({
       <body
         className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
       >
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-ink focus:px-4 focus:py-2 focus:font-semibold focus:text-paper"
+        >
+          Saltar al contenido
+        </a>
         <SmoothScroll />
         <ScrollProgress />
         <Header />
-        <main>{children}</main>
+        <main id="main">{children}</main>
         <Footer />
         <CTASticky />
       </body>

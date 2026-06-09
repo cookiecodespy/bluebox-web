@@ -29,7 +29,7 @@ export function Header() {
           : "border-b border-line bg-paper/85 backdrop-blur-md"
       }`}
     >
-      <nav className="mx-auto flex h-[78px] max-w-[1240px] items-center justify-between px-5 sm:px-8 lg:px-10">
+      <nav className="mx-auto flex h-[92px] max-w-[1240px] items-center justify-between px-5 sm:px-8 lg:px-10">
         <Link href="/" aria-label="BlueBox — inicio">
           <Wordmark />
         </Link>
