@@ -13,6 +13,9 @@ const ITEMS = [
   "Finanzas",
   "Salud",
   "Gobierno",
+  "Educación",
+  "Energía",
+  "Agroindustria",
 ];
 
 export function Marquee() {

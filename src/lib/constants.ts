@@ -214,6 +214,24 @@ export const INDUSTRIES = [
     description:
       "Digitalización de procesos e integración con plataformas estatales.",
   },
+  {
+    id: "educacion",
+    title: "Educación & Universidades",
+    description:
+      "Integración de sistemas académicos y automatización de procesos administrativos.",
+  },
+  {
+    id: "energia",
+    title: "Energía & Utilities",
+    description:
+      "Telemetría, facturación y gestión de mantenimiento sobre datos confiables.",
+  },
+  {
+    id: "agro",
+    title: "Agroindustria & Alimentos",
+    description:
+      "Trazabilidad de lotes, cadena de frío y reportes de exportación automatizados.",
+  },
 ];
 
 // ------------------------------------------------------------

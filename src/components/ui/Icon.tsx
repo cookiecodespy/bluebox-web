@@ -36,6 +36,8 @@ import {
   Cloud,
   Handshake,
   Headset,
+  GraduationCap,
+  Wheat,
   type LucideIcon,
 } from "lucide-react";
 
@@ -63,6 +65,9 @@ const MAP: Record<string, LucideIcon> = {
   finanzas: Landmark,
   salud: HeartPulse,
   gobierno: Building2,
+  educacion: GraduationCap,
+  energia: Zap,
+  agro: Wheat,
   // extra (secciones nuevas)
   clock: Clock,
   badge: BadgeCheck,

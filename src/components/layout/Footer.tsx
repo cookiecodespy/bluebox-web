@@ -119,6 +119,13 @@ export function Footer() {
               Privacidad
             </Link>
             <span>Hecho en Chile</span>
+            <a
+              href="#main"
+              className="group inline-flex items-center gap-1.5 transition-colors hover:text-paper"
+            >
+              Volver arriba
+              <span className="transition-transform group-hover:-translate-y-0.5">↑</span>
+            </a>
           </div>
         </div>
       </div>

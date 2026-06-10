@@ -45,12 +45,12 @@ export function WhyUs() {
           eyebrow="Por qué BlueBox"
           title="Ventajas que no se improvisan"
           highlight="no se improvisan"
-          description="Lo que separa a un socio tecnológico real de un proveedor más — y de la IA cruda."
+          description="Lo que separa a un socio tecnológico real de un proveedor más — para la empresa que recién ordena su operación y para la organización que no puede detenerse."
         />
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {REASONS.map((r, i) => (
             <Reveal key={r.title} delay={(i % 3) * 80}>
-              <Card padding="lg" className="h-full">
+              <Card hover padding="lg" className="h-full">
                 <div className="mb-5 grid h-12 w-12 place-items-center rounded-xl border border-line bg-paper text-cobalt">
                   <Icon name={r.icon} className="h-[22px] w-[22px]" />
                 </div>

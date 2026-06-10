@@ -26,7 +26,12 @@ export function PageHero({ eyebrow, title, accent, sub }: PageHeroProps) {
           transition={{ duration: 0.6, ease: EASE }}
           className="kicker flex items-center gap-3"
         >
-          <span className="inline-block h-px w-6 bg-cobalt" />
+          <motion.span
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: EASE }}
+            className="inline-block h-px w-6 origin-left bg-cobalt"
+          />
           {eyebrow}
         </motion.p>
         <motion.h1
@@ -36,7 +41,18 @@ export function PageHero({ eyebrow, title, accent, sub }: PageHeroProps) {
           className="mt-6 max-w-[18ch] font-display text-[clamp(2.4rem,4.6vw,3.6rem)] font-medium leading-[1.04] tracking-[-0.025em] text-ink"
         >
           {title}
-          {accent && <span className="text-cobalt"> {accent}</span>}
+          {accent && (
+            <span className="relative text-cobalt">
+              {" "}
+              {accent}
+              <motion.span
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.55, ease: EASE }}
+                className="absolute inset-x-0 -bottom-1 h-px origin-left bg-cobalt/60"
+              />
+            </span>
+          )}
         </motion.h1>
         {sub && (
           <motion.p

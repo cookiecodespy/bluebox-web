@@ -3,12 +3,14 @@ import { buildMetadata } from "@/lib/metadata";
 import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/sections/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
+import { Card } from "@/components/ui/Card";
+import { Icon } from "@/components/ui/Icon";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 
 export const metadata: Metadata = buildMetadata({
   title: "Industrias",
   description:
-    "Software, integraciones y automatización para logística, retail, manufactura, servicios financieros, salud y sector público en Chile y LATAM.",
+    "Software, integraciones y automatización para logística, retail, manufactura, finanzas, salud, educación, energía, agroindustria y sector público en Chile y LATAM.",
 });
 
 const INDUSTRY_DETAIL = [
@@ -78,6 +80,39 @@ const INDUSTRY_DETAIL = [
       "Dashboards de gestión con KPIs operacionales para directivos",
     ],
   },
+  {
+    id: "educacion",
+    title: "Educación & Universidades",
+    description:
+      "Integración entre sistemas académicos y administrativos, y automatización de los procesos que hoy consumen horas de secretaría y coordinación.",
+    cases: [
+      "Integración entre sistema académico, finanzas y plataformas de aprendizaje",
+      "Automatización de certificados, constancias y procesos de matrícula",
+      "Dashboards de avance académico y asistencia para coordinación",
+    ],
+  },
+  {
+    id: "energia",
+    title: "Energía & Utilities",
+    description:
+      "Telemetría, facturación y mantenimiento sobre datos confiables. Integramos medidores, sistemas comerciales y de terreno en una sola operación.",
+    cases: [
+      "Consolidación de lecturas y telemetría para facturación sin descuadres",
+      "Órdenes de trabajo de mantenimiento con trazabilidad de cuadrillas",
+      "Alertas de consumo anómalo y pérdidas con escalamiento automático",
+    ],
+  },
+  {
+    id: "agro",
+    title: "Agroindustria & Alimentos",
+    description:
+      "Trazabilidad desde el campo al despacho: lotes, cadena de frío y documentación de exportación generada de forma automática y auditable.",
+    cases: [
+      "Trazabilidad de lotes desde cosecha o producción hasta el cliente final",
+      "Monitoreo de cadena de frío con alertas y registro para auditorías",
+      "Generación automática de documentación de exportación y certificados",
+    ],
+  },
 ];
 
 export default function IndustriasPage() {
@@ -87,19 +122,19 @@ export default function IndustriasPage() {
         eyebrow="Industrias"
         title="Conocemos el terreno"
         accent="de tu sector."
-        sub="Cada industria tiene sus sistemas, formatos y regulaciones. Trabajamos con esa realidad, no contra ella."
+        sub="Cada industria tiene sus sistemas, formatos y regulaciones — y cada organización su escala. Trabajamos con esa realidad, no contra ella."
       />
 
       <section className="pb-24">
         <Container>
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
             {INDUSTRY_DETAIL.map((ind, i) => (
-              <Reveal key={ind.id} delay={(i % 2) * 80}>
-                <div className="h-full rounded-[14px] border border-line bg-paper-2 p-8 transition-colors hover:border-ink/20">
-                  <span className="mono text-[12px] text-ink-mute">
-                    {String(i + 1).padStart(2, "0")}
+              <Reveal key={ind.id} delay={(i % 3) * 80}>
+                <Card hover padding="lg" className="h-full">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl border border-line bg-paper text-cobalt">
+                    <Icon name={ind.id} className="h-5 w-5" />
                   </span>
-                  <h2 className="mt-3 font-display text-[22px] font-medium tracking-[-0.01em] text-ink">
+                  <h2 className="mt-4 font-display text-[22px] font-medium tracking-[-0.01em] text-ink">
                     {ind.title}
                   </h2>
                   <p className="mt-3 leading-relaxed text-ink-soft">{ind.description}</p>
@@ -112,7 +147,7 @@ export default function IndustriasPage() {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </Card>
               </Reveal>
             ))}
           </div>
