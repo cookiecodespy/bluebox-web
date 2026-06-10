@@ -95,6 +95,27 @@ export default function ContactoPage() {
                   Menos de 24 horas hábiles. Para urgencias, WhatsApp es más rápido.
                 </p>
               </div>
+
+              {/* Qué pasa después — quitar el miedo al "¿y ahora qué?" */}
+              <div className="border-t border-line pt-8">
+                <p className="kicker mb-5">Qué pasa después de enviar</p>
+                <ol className="space-y-4">
+                  {[
+                    ["Te respondemos", "en menos de 24 h hábiles, una persona real."],
+                    ["Agendamos 30 min", "nos cuentas tu proceso; no necesitas preparar nada."],
+                    ["Te llevas un plan", "cómo lo haríamos y una estimación — trabajemos juntos o no."],
+                  ].map(([t, d], i) => (
+                    <li key={t} className="flex items-start gap-3.5">
+                      <span className="mt-0.5 grid h-6 w-6 flex-shrink-0 place-items-center rounded-full border border-cobalt/40 font-mono text-[11px] font-medium text-cobalt">
+                        {i + 1}
+                      </span>
+                      <p className="text-[14.5px] leading-relaxed text-ink-soft">
+                        <span className="font-semibold text-ink">{t}</span> — {d}
+                      </p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
             </div>
 
             {/* Form */}

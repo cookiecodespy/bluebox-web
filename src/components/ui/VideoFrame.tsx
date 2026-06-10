@@ -59,17 +59,36 @@ export function VideoFrame({
           <div className="bp-grid pointer-events-none absolute inset-0 opacity-50" />
           <div
             className="pointer-events-none absolute inset-0"
-            style={{ background: "radial-gradient(circle at 50% 50%, rgba(27,54,255,0.10), transparent 65%)" }}
+            style={{ background: "radial-gradient(circle at 50% 45%, rgba(27,54,255,0.08), transparent 60%)" }}
           />
-          <div className="relative flex flex-col items-center gap-2.5">
-            <span className="relative grid h-14 w-14 place-items-center rounded-full border border-cobalt/40 text-cobalt">
-              <span className="absolute inset-0 animate-ping rounded-full bg-cobalt/10" />
-              <Icon name={icon} className="h-6 w-6" />
+
+          {/* esquinas del logo Blue Box (4 colores) */}
+          <span className="absolute left-3 top-3 h-3.5 w-3.5 rounded-tl border-l-2 border-t-2 border-[#3b6cff]/70" aria-hidden="true" />
+          <span className="absolute right-3 top-3 h-3.5 w-3.5 rounded-tr border-r-2 border-t-2 border-[#27ae60]/60" aria-hidden="true" />
+          <span className="absolute bottom-3 left-3 h-3.5 w-3.5 rounded-bl border-b-2 border-l-2 border-[#f3c613]/60" aria-hidden="true" />
+          <span className="absolute bottom-3 right-3 h-3.5 w-3.5 rounded-br border-b-2 border-r-2 border-[#e2533b]/60" aria-hidden="true" />
+
+          {/* anillos blueprint + pulso de "play" */}
+          <span
+            className={`pointer-events-none absolute aspect-square w-[58%] max-w-[200px] rounded-full border border-dashed ${
+              dark ? "border-white/10" : "border-line"
+            }`}
+            aria-hidden="true"
+          />
+          <span className="relative grid h-14 w-14 place-items-center rounded-full border border-cobalt/40 text-cobalt">
+            <span className="absolute inset-0 animate-ping rounded-full bg-cobalt/10" />
+            <Icon name={icon} className="h-6 w-6" />
+          </span>
+
+          {src && (
+            <span
+              className={`mono absolute bottom-2.5 right-3.5 text-[9px] tracking-wide ${
+                dark ? "text-paper/25" : "text-ink-mute/60"
+              }`}
+            >
+              {src.split("/").pop()}
             </span>
-            <span className={`mono text-[10px] ${dark ? "text-paper/35" : "text-ink-mute"}`}>
-              {src ? src.split("/").pop() : "video.mp4"}
-            </span>
-          </div>
+          )}
         </div>
       )}
     </div>
