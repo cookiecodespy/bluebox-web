@@ -4,15 +4,15 @@ import { MediaFrame } from "@/components/ui/MediaFrame";
 import { Reveal } from "@/components/ui/Reveal";
 
 const PHOTOS = [
-  { src: "/images/team-1.jpg", icon: "dev" },
-  { src: "/images/team-2.jpg", icon: "ia" },
-  { src: "/images/team-3.jpg", icon: "data" },
-  { src: "/images/team-4.jpg", icon: "shield" },
+  { src: "/images/team-mauricio.jpg", icon: "users" },
+  { src: "/images/team-tomas.jpg", icon: "ai" },
+  { src: "/images/team-dev.jpg", icon: "dev" },
+  { src: "/images/team-admin.jpg", icon: "filecheck" },
 ];
 
 const POINTS = [
-  "Empresa chilena formal, con más de 10 años de trayectoria",
-  "Equipo de desarrollo, IA y ciberseguridad propio",
+  "Fundada en 2018, con décadas de oficio detrás",
+  "Dos generaciones trabajando en la misma empresa",
   "Contratos, SLA y responsabilidad real (Ley 19.628)",
 ];
 

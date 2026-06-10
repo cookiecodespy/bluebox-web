@@ -38,6 +38,7 @@ import {
   Headset,
   GraduationCap,
   Wheat,
+  Bus,
   type LucideIcon,
 } from "lucide-react";
 
@@ -68,6 +69,7 @@ const MAP: Record<string, LucideIcon> = {
   educacion: GraduationCap,
   energia: Zap,
   agro: Wheat,
+  transporte: Bus,
   // extra (secciones nuevas)
   clock: Clock,
   badge: BadgeCheck,
