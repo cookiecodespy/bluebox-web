@@ -45,9 +45,45 @@ export function DashboardShowcase() {
           </Link>
         </div>
 
-        <Parallax amount={26}>
-          <OpsDashboard />
-        </Parallax>
+        {/* Mockup compuesto: dashboard + chips satélite flotando alrededor */}
+        <div className="relative">
+          <Parallax amount={26}>
+            <OpsDashboard />
+          </Parallax>
+
+          <div className="animate-floaty-slow pointer-events-none absolute -top-6 -left-5 z-10 hidden items-center gap-2.5 rounded-full border border-white/12 bg-ink/85 px-4 py-2 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.7)] backdrop-blur-md lg:flex">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cobalt opacity-60" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-cobalt" />
+            </span>
+            <span className="font-mono text-[11px] tracking-wide text-paper/75">
+              WMS · ERP sincronizado
+            </span>
+          </div>
+
+          <div className="animate-floaty pointer-events-none absolute -right-6 top-12 z-10 hidden rounded-xl border border-white/12 bg-ink/85 px-4 py-3 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.7)] backdrop-blur-md lg:block">
+            <div className="flex items-center gap-2.5">
+              <span className="grid h-6 w-6 place-items-center rounded-full bg-cobalt/20 text-[12px] text-cobalt">
+                ✓
+              </span>
+              <div>
+                <p className="text-[12.5px] font-semibold text-paper">
+                  Pedido #4812 conciliado
+                </p>
+                <p className="font-mono text-[10px] text-paper/45">hace 6 s · automático</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="animate-floaty-slow pointer-events-none absolute -bottom-7 -right-3 z-10 hidden rounded-xl border border-white/12 bg-ink/85 px-5 py-3.5 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.7)] backdrop-blur-md lg:block">
+            <p className="font-display text-2xl font-semibold tracking-tight text-cobalt">
+              −67%
+            </p>
+            <p className="mt-0.5 font-mono text-[10px] uppercase tracking-wider text-paper/50">
+              tiempo de proceso
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
