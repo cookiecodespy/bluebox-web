@@ -41,7 +41,9 @@ export function Header() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`text-[14.5px] font-medium transition-colors ${
+                  className={`relative pb-1 text-[14.5px] font-medium transition-colors after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:bg-cobalt after:transition-transform after:duration-300 after:ease-out hover:after:scale-x-100 ${
+                    active ? "after:scale-x-100" : "after:scale-x-0"
+                  } ${
                     overHero
                       ? "text-paper/75 hover:text-paper"
                       : active

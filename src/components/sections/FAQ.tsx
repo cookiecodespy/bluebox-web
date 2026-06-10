@@ -8,7 +8,6 @@ export function FAQ() {
     <section className="py-24">
       <Container size="lg">
         <SectionTitle
-          index="05"
           eyebrow="Preguntas frecuentes"
           title="Lo que conviene saber antes de empezar"
           highlight="antes de empezar"

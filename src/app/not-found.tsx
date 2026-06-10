@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 
 export default function NotFound() {
   return (
@@ -14,12 +14,9 @@ export default function NotFound() {
         <p className="mx-auto mt-6 max-w-md text-lg leading-relaxed text-ink-soft">
           La página que buscas no existe o fue movida.
         </p>
-        <Link
-          href="/"
-          className="mt-8 inline-flex items-center gap-2.5 rounded-full bg-cobalt px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-cobalt-deep"
-        >
+        <Button href="/" size="lg" className="mt-8 text-[15px]">
           ← Volver al inicio
-        </Link>
+        </Button>
       </div>
     </div>
   );

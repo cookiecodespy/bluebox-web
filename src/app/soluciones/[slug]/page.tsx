@@ -8,6 +8,7 @@ import { Container } from "@/components/layout/Container";
 import { Icon } from "@/components/ui/Icon";
 import { MediaFrame } from "@/components/ui/MediaFrame";
 import { Reveal } from "@/components/ui/Reveal";
+import { Button } from "@/components/ui/Button";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 
 export function generateStaticParams() {
@@ -58,15 +59,12 @@ export default async function SolutionPage({
                   </li>
                 ))}
               </ul>
-              <Link
-                href="/contacto"
-                className="mt-9 inline-flex items-center gap-2.5 rounded-full bg-cobalt px-6 py-3.5 text-[15.5px] font-semibold text-white transition-colors hover:bg-cobalt-deep"
-              >
+              <Button href="/contacto" size="lg" className="mt-9 !py-3.5 text-[15.5px]">
                 Conversemos sobre esto
-                <svg className="h-4 w-4" viewBox="0 0 16 16" fill="none">
+                <svg className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h9M8 4l4 4-4 4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </Link>
+              </Button>
             </div>
             <MediaFrame
               src={`/images/sol-${sol.id}.jpg`}

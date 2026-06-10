@@ -1,6 +1,5 @@
 interface SectionTitleProps {
   eyebrow?: string;
-  index?: string; // ej. "02" — numeración dossier
   title: string;
   highlight?: string;
   description?: string;

@@ -5,6 +5,7 @@ import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/sections/PageHero";
 import { WHATSAPP_FULL_URL, CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/constants";
 import { submitLead } from "@/lib/supabase";
+import { Button } from "@/components/ui/Button";
 
 const CONTACT_REASONS = [
   "Agendar un diagnóstico",
@@ -176,18 +177,14 @@ export default function ContactoPage() {
                         className={`${inputCls} resize-none`}
                       />
                     </Field>
-                    <button
-                      type="submit"
-                      disabled={sending}
-                      className="flex w-full items-center justify-center gap-2 rounded-full bg-cobalt px-6 py-3.5 font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:opacity-60"
-                    >
+                    <Button type="submit" size="lg" fullWidth disabled={sending} className="!py-3.5">
                       {sending ? "Enviando…" : "Enviar mensaje"}
                       {!sending && (
-                        <svg className="h-4 w-4" viewBox="0 0 16 16" fill="none">
+                        <svg className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5" viewBox="0 0 16 16" fill="none">
                           <path d="M3 8h9M8 4l4 4-4 4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                       )}
-                    </button>
+                    </Button>
                     <p className="text-center text-xs text-ink-mute">
                       Se abrirá tu cliente de correo con el mensaje prellenado. Sin formularios de
                       terceros ni tracking.

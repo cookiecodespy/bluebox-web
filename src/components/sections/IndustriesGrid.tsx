@@ -9,7 +9,6 @@ export function IndustriesGrid() {
     <section className="bg-paper-2/40 py-24">
       <Container>
         <SectionTitle
-          index="04"
           eyebrow="Industrias"
           title="Conocemos el terreno de tu sector"
           highlight="tu sector"

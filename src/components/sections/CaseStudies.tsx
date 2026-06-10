@@ -17,7 +17,6 @@ export function CaseStudies() {
     <section className="py-24">
       <Container>
         <SectionTitle
-          index="03"
           eyebrow="Casos"
           title="El tipo de problemas que resolvemos"
           highlight="que resolvemos"

@@ -11,7 +11,6 @@ export function ServicesGrid() {
     <section className="bg-paper-2/40 py-24">
       <Container>
         <SectionTitle
-          index="02"
           eyebrow="Servicios"
           title="Capacidades de extremo a extremo"
           highlight="extremo a extremo"

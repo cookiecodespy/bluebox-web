@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { OpsDashboard } from "@/components/fx/OpsDashboard";
 import { Parallax } from "@/components/fx/Parallax";
+import { Tilt } from "@/components/fx/Tilt";
 
 const POINTS = [
   "Métricas y alertas conectadas a tus datos reales",
@@ -48,7 +49,9 @@ export function DashboardShowcase() {
         {/* Mockup compuesto: dashboard + chips satélite flotando alrededor */}
         <div className="relative">
           <Parallax amount={26}>
-            <OpsDashboard />
+            <Tilt max={4}>
+              <OpsDashboard />
+            </Tilt>
           </Parallax>
 
           <div className="animate-floaty-slow pointer-events-none absolute -top-6 -left-5 z-10 hidden items-center gap-2.5 rounded-full border border-white/12 bg-ink/85 px-4 py-2 shadow-[0_18px_40px_-18px_rgba(0,0,0,0.7)] backdrop-blur-md lg:flex">

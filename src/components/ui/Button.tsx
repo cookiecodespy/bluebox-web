@@ -62,7 +62,16 @@ export function Button({
   };
 
   const base =
-    "inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cobalt focus-visible:ring-offset-2 focus-visible:ring-offset-paper cursor-pointer";
+    "group/btn relative overflow-hidden inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cobalt focus-visible:ring-offset-2 focus-visible:ring-offset-paper cursor-pointer";
+
+  // Barrido de luz al hover, solo en variantes con fondo sólido.
+  const sheen =
+    variant === "primary" || variant === "whatsapp" ? (
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -translate-x-[120%] bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover/btn:translate-x-[120%]"
+      />
+    ) : null;
   const classes = [
     base,
     variantClasses[variant],
@@ -85,12 +94,14 @@ export function Button({
           onMouseMove={onMove}
           onMouseLeave={onLeave}
         >
+          {sheen}
           {children}
         </a>
       );
     }
     return (
       <Link href={href} className={classes} onMouseMove={onMove} onMouseLeave={onLeave}>
+        {sheen}
         {children}
       </Link>
     );
@@ -105,6 +116,7 @@ export function Button({
       onMouseMove={onMove}
       onMouseLeave={onLeave}
     >
+      {sheen}
       {children}
     </button>
   );

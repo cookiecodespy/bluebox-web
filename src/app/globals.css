@@ -156,9 +156,38 @@ h1, h2, h3, .font-display {
 .animate-marquee {
   animation: marquee 34s linear infinite;
 }
+/* pausa al pasar el cursor — invita a leer */
+.marquee-mask:hover .animate-marquee {
+  animation-play-state: paused;
+}
 .marquee-mask {
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+/* Selección de texto on-brand */
+::selection {
+  background: var(--color-cobalt);
+  color: #fff;
+}
+
+/* Scrollbar fino y discreto */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--color-ink) 35%, transparent) transparent;
+}
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-ink) 30%, transparent);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cobalt);
 }
 
 /* Chips flotantes del mockup compuesto */

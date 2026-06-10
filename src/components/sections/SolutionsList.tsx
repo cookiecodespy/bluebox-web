@@ -10,7 +10,6 @@ export function SolutionsList() {
     <section id="soluciones" className="scroll-mt-24 py-24">
       <Container>
         <SectionTitle
-          index="01"
           eyebrow="Soluciones"
           title="Soluciones orientadas a resultado"
           highlight="resultado"

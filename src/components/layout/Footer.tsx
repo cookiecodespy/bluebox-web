@@ -103,6 +103,15 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Marca de agua editorial */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none -mx-2 mb-2 select-none overflow-hidden font-display text-[clamp(4rem,12.5vw,11rem)] font-bold leading-[0.85] tracking-[-0.04em] text-transparent"
+          style={{ WebkitTextStroke: "1px rgba(242,236,224,0.07)" }}
+        >
+          BLUEBOX
+        </div>
+
         <div className="flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 font-mono text-xs text-paper/40 sm:flex-row sm:items-center">
           <p>© {year} {SITE_NAME} · Todos los derechos reservados</p>
           <div className="flex items-center gap-5">

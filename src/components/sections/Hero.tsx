@@ -5,6 +5,7 @@ import { motion, type Variants } from "motion/react";
 import { HERO, SOLUTIONS } from "@/lib/constants";
 import { HeroCanvas } from "@/components/fx/HeroCanvas";
 import { Icon } from "@/components/ui/Icon";
+import { Button } from "@/components/ui/Button";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -60,15 +61,16 @@ export function Hero() {
           </motion.p>
 
           <motion.div variants={up} className="mt-9 flex flex-wrap items-center gap-6">
-            <Link
+            <Button
               href="/contacto"
-              className="group inline-flex items-center gap-2.5 rounded-full bg-cobalt px-6 py-3.5 text-[15.5px] font-semibold text-white transition-colors hover:bg-cobalt-deep"
+              size="lg"
+              className="!py-3.5 text-[15.5px] shadow-[0_0_42px_-10px_rgba(27,54,255,0.55)] hover:shadow-[0_0_56px_-8px_rgba(27,54,255,0.75)]"
             >
               Agenda un diagnóstico
-              <svg className="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none">
+              <svg className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h9M8 4l4 4-4 4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </Link>
+            </Button>
             <Link
               href="/#soluciones"
               className="inline-flex items-center gap-2 border-b-[1.5px] border-paper/40 pb-0.5 text-[15.5px] font-semibold text-paper transition-colors hover:border-cobalt hover:text-cobalt"

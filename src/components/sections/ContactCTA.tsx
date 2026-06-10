@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { WHATSAPP_FULL_URL, CONTACT_EMAIL } from "@/lib/constants";
+import { Button } from "@/components/ui/Button";
 
 export function ContactCTA() {
   return (
@@ -23,17 +24,12 @@ export function ContactCTA() {
           con un plan concreto, no con promesas vacías.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
-            href={WHATSAPP_FULL_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 rounded-full bg-cobalt px-6 py-3.5 text-[15.5px] font-semibold text-white transition-colors hover:bg-cobalt-deep"
-          >
+          <Button href={WHATSAPP_FULL_URL} external size="lg" className="!py-3.5 text-[15.5px]">
             Agenda un diagnóstico
-            <svg className="h-4 w-4" viewBox="0 0 16 16" fill="none">
+            <svg className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h9M8 4l4 4-4 4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </a>
+          </Button>
           <Link
             href="/contacto"
             className="inline-flex items-center gap-2 rounded-full border border-paper/30 px-6 py-3.5 text-[15.5px] font-semibold text-paper transition-colors hover:bg-paper hover:text-ink"
