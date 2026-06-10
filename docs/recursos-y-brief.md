@@ -100,3 +100,19 @@ Devices/ideas a incorporar:
 4. Carrusel de testimonios + nube de logos (con material real).
 5. Páginas por solución + Insights (Supabase).
 6. Deploy a Cloudflare Pages.
+
+---
+
+## 4) Grupo H — Servicios en profundidad (NUEVO 2026-06-10, página /servicios)
+
+Mismo estilo que el resto del brief: fotografía editorial, luz natural fría,
+paleta marfil/tinta con acentos azul cobalto, sin texto incrustado, 4:3.
+
+| Archivo | Prompt para GPT Image |
+|---|---|
+| `serv-desarrollo.jpg` | Editorial photo of a software engineer's workspace in a modern Chilean office, dual monitors showing clean code architecture diagrams, warm ivory and ink tones with a cobalt blue accent object, natural cold light, shallow depth of field, no text, 4:3 |
+| `serv-integraciones.jpg` | Editorial photo of a logistics control room, large screen showing system connection lines between warehouse software, server cables neatly organized with one cobalt blue cable highlighted, ivory/ink palette, no text, 4:3 |
+| `serv-ia.jpg` | Editorial photo of a professional reviewing an AI approval panel on a tablet, human hand about to tap an approve button, modern office, ivory and ink palette with cobalt blue UI glow, no text, 4:3 |
+| `serv-data.jpg` | Editorial photo of clean data visualization on a monitor in a dim modern office, organized flowing chart lines in cobalt blue on dark background, analyst silhouette out of focus, no text, 4:3 |
+| `serv-observabilidad.jpg` | Editorial photo of a wall-mounted operations dashboard with live charts and one cobalt blue alert indicator, modern industrial office, ivory/ink palette, natural light, no text, 4:3 |
+| `serv-calidad.jpg` | Editorial photo of a deployment pipeline screen with green passing checks, engineer's hands on keyboard, security badge on desk, ivory and ink tones with cobalt accent, no text, 4:3 |
