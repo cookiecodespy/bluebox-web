@@ -6,6 +6,7 @@ import { SolutionsList } from "@/components/sections/SolutionsList";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { StatsBand } from "@/components/sections/StatsBand";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
+import { PipelineSection } from "@/components/sections/PipelineSection";
 import { EngagementModels } from "@/components/sections/EngagementModels";
 import { DashboardShowcase } from "@/components/sections/DashboardShowcase";
 import { OrgRoles } from "@/components/sections/OrgRoles";
@@ -36,6 +37,7 @@ export default function HomePage() {
       <WhyUs />
       <StatsBand />
       <ServicesGrid />
+      <PipelineSection />
       <EngagementModels />
       <DashboardShowcase />
       <OrgRoles />
