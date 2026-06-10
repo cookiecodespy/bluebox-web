@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
 import { asset } from "@/lib/asset";
 
@@ -23,6 +23,14 @@ export function VideoFrame({
   dark?: boolean;
 }) {
   const [failed, setFailed] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // El error de carga puede ocurrir antes de la hidratación; revisar al montar.
+  useEffect(() => {
+    const v = videoRef.current;
+    if (v && (v.error || v.networkState === 3)) setFailed(true);
+  }, []);
+
   const show = src && !failed;
   return (
     <div
@@ -32,6 +40,7 @@ export function VideoFrame({
     >
       {show ? (
         <video
+          ref={videoRef}
           src={asset(src!)}
           poster={poster ? asset(poster) : undefined}
           autoPlay

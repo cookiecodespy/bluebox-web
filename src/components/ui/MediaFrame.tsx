@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
 import { asset } from "@/lib/asset";
 
@@ -23,6 +23,15 @@ export function MediaFrame({
   dark?: boolean;
 }) {
   const [failed, setFailed] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  // El 404 puede ocurrir antes de que React hidrate (onError no alcanza a
+  // engancharse): al montar, revisar si la imagen ya falló.
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img && img.complete && img.naturalWidth === 0) setFailed(true);
+  }, []);
+
   const showImg = src && !failed;
   return (
     <div
@@ -33,6 +42,7 @@ export function MediaFrame({
       {showImg ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
+          ref={imgRef}
           src={asset(src!)}
           alt={alt}
           loading="lazy"
