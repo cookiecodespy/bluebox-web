@@ -37,8 +37,8 @@ function Counter({ to, prefix = "", suffix = "" }: { to: number; prefix?: string
 }
 
 const STATS: { node: React.ReactNode; label: string }[] = [
-  { node: <Counter to={10} suffix="+" />, label: "años de trayectoria formal" },
-  { node: <Counter to={6} />, label: "líneas de servicio" },
+  { node: <Counter to={40} suffix="+" />, label: "años de oficio del fundador" },
+  { node: <span>2018</span>, label: "fundada en Santiago de Chile" },
   { node: <Counter to={24} suffix="h" />, label: "respuesta hábil" },
   { node: <span>Ley&nbsp;19.628</span>, label: "empresa chilena formal" },
 ];

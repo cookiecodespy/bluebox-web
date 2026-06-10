@@ -30,7 +30,7 @@ export const HERO = {
   sub: "Desarrollo a medida, integraciones, automatización y datos listos para IA — con la responsabilidad de una empresa formal: SLA, contratos y trazabilidad. Para Chile, LATAM y EE. UU.",
   // Cifras conservadoras y verificables (TODO Tomás: confirmar números).
   stats: [
-    { v: "+10 años", l: "trayectoria formal" },
+    { v: "Desde 2018", l: "operaciones reales en producción" },
     { v: "Chile", l: "equipo · zona horaria EE.UU." },
     { v: "SLA", l: "contratos · Ley 19.628" },
   ],
