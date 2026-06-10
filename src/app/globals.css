@@ -190,6 +190,14 @@ html {
   background: var(--color-cobalt);
 }
 
+/* Órbitas de tecnología (rotación continua + contra-rotación de chips) */
+@keyframes orbit {
+  to { transform: rotate(360deg); }
+}
+@keyframes orbit-rev {
+  to { transform: rotate(-360deg); }
+}
+
 /* Chips flotantes del mockup compuesto */
 @keyframes floaty {
   0%, 100% { transform: translateY(0); }

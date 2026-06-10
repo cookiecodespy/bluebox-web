@@ -7,6 +7,8 @@ import { PageHero } from "@/components/sections/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { MediaFrame } from "@/components/ui/MediaFrame";
 import { Parallax } from "@/components/fx/Parallax";
+import { Tilt } from "@/components/fx/Tilt";
+import { DrawLine } from "@/components/fx/DrawLine";
 import { Button } from "@/components/ui/Button";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 
@@ -85,7 +87,9 @@ export default function CasosPage() {
                     }`}
                   >
                     <Parallax amount={18}>
-                      <MediaFrame src={d.img} alt={c.title} icon={d.icon} ratio="aspect-[4/3]" />
+                      <Tilt max={4}>
+                        <MediaFrame src={d.img} alt={c.title} icon={d.icon} ratio="aspect-[4/3]" />
+                      </Tilt>
                     </Parallax>
 
                     <div>
@@ -163,9 +167,10 @@ export default function CasosPage() {
           <p className="kicker mb-4 flex items-center gap-3">
             <span className="inline-block h-px w-6 bg-cobalt" /> Cómo lo hacemos
           </p>
-          <h2 className="mb-12 max-w-[20ch] font-display text-[2rem] font-medium leading-[1.06] tracking-[-0.02em] text-ink md:text-[2.4rem]">
+          <h2 className="mb-10 max-w-[20ch] font-display text-[2rem] font-medium leading-[1.06] tracking-[-0.02em] text-ink md:text-[2.4rem]">
             De problema a solución en <span className="text-cobalt">cuatro pasos</span>
           </h2>
+          <DrawLine className="mb-8" />
           <div className="grid grid-cols-1 gap-px overflow-hidden rounded-[14px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
             {PROCESS.map((step, i) => (
               <div

@@ -8,7 +8,10 @@ import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { MediaFrame } from "@/components/ui/MediaFrame";
 import { Parallax } from "@/components/fx/Parallax";
+import { Tilt } from "@/components/fx/Tilt";
 import { Button } from "@/components/ui/Button";
+import { GlowCard } from "@/components/ui/GlowCard";
+import { ServiceRail } from "@/components/sections/ServiceRail";
 import { FAQ } from "@/components/sections/FAQ";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 
@@ -100,27 +103,42 @@ export default function ServiciosPage() {
         sub="Cada capacidad resuelve un problema concreto, pero están pensadas para integrarse y cubrir el ciclo completo — del código a la operación en producción."
       />
 
-      {/* Servicios en profundidad — filas alternadas con visual */}
+      {/* Servicios en profundidad — riel sticky + filas alternadas con visual */}
       <section className="pb-10">
         <Container>
-          <div className="space-y-24">
+          <div className="grid gap-10 xl:grid-cols-[210px_1fr] xl:gap-14">
+            <ServiceRail items={SERVICES.map((s) => ({ id: s.id, title: s.title }))} />
+            <div className="space-y-24">
             {SERVICES.map((service, i) => {
               const extra = SERVICE_EXTRA[service.id];
               const reversed = i % 2 === 1;
               return (
                 <Reveal key={service.id}>
                   <div
-                    className={`grid items-center gap-10 lg:grid-cols-2 lg:gap-16 ${
+                    id={`serv-${service.id}`}
+                    className={`relative grid scroll-mt-28 items-center gap-10 lg:grid-cols-2 lg:gap-16 ${
                       reversed ? "lg:[&>*:first-child]:order-2" : ""
                     }`}
                   >
+                    {/* ícono gigante de fondo, profundidad editorial */}
+                    <div
+                      className={`pointer-events-none absolute -top-10 hidden rotate-[8deg] text-ink opacity-[0.04] lg:block ${
+                        reversed ? "-left-8" : "-right-8"
+                      }`}
+                      aria-hidden="true"
+                    >
+                      <Icon name={service.icon} className="h-64 w-64" strokeWidth={0.9} />
+                    </div>
+
                     <Parallax amount={18}>
-                      <MediaFrame
-                        src={`/images/serv-${service.id}.jpg`}
-                        alt={service.title}
-                        icon={service.icon}
-                        ratio="aspect-[4/3]"
-                      />
+                      <Tilt max={4}>
+                        <MediaFrame
+                          src={`/images/serv-${service.id}.jpg`}
+                          alt={service.title}
+                          icon={service.icon}
+                          ratio="aspect-[4/3]"
+                        />
+                      </Tilt>
                     </Parallax>
 
                     <div>
@@ -167,6 +185,7 @@ export default function ServiciosPage() {
                 </Reveal>
               );
             })}
+            </div>
           </div>
         </Container>
       </section>
@@ -205,18 +224,17 @@ export default function ServiciosPage() {
                 <p className="kicker !text-paper/55">Con BlueBox</p>
                 <div className="mt-5 space-y-4">
                   {ANSWERS.map((a) => (
-                    <div
-                      key={a.title}
-                      className="flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-sm transition-colors hover:border-cobalt/40"
-                    >
-                      <span className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-lg border border-white/12 text-cobalt">
-                        <Icon name={a.icon} className="h-[19px] w-[19px]" />
-                      </span>
-                      <div>
-                        <p className="text-[15.5px] font-semibold text-paper">{a.title}</p>
-                        <p className="mt-1 text-[14px] leading-relaxed text-paper/60">{a.desc}</p>
+                    <GlowCard key={a.title} className="p-5">
+                      <div className="flex items-start gap-4">
+                        <span className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-lg border border-white/12 text-cobalt">
+                          <Icon name={a.icon} className="h-[19px] w-[19px]" />
+                        </span>
+                        <div>
+                          <p className="text-[15.5px] font-semibold text-paper">{a.title}</p>
+                          <p className="mt-1 text-[14px] leading-relaxed text-paper/60">{a.desc}</p>
+                        </div>
                       </div>
-                    </div>
+                    </GlowCard>
                   ))}
                 </div>
                 <Button href="/contacto" size="lg" className="mt-8 !py-3.5 text-[15.5px]">

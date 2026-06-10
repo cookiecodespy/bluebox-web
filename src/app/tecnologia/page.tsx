@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/Card";
 import { Icon } from "@/components/ui/Icon";
 import { Reveal } from "@/components/ui/Reveal";
 import { TerminalDemo } from "@/components/fx/TerminalDemo";
+import { TechOrbit } from "@/components/fx/TechOrbit";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 
 export const metadata: Metadata = buildMetadata({
@@ -52,8 +53,19 @@ export default function TecnologiaPage() {
         sub="Tecnologías probadas en producción, con comunidades activas y documentación sólida. Nada que no podamos explicar y tu equipo no pueda mantener."
       />
 
+      {/* Órbita: el ecosistema girando alrededor de BlueBox */}
+      <section className="relative overflow-hidden pb-8">
+        <Container>
+          <Reveal>
+            <div className="hidden md:block">
+              <TechOrbit />
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
       {/* Stack */}
-      <section className="pb-24">
+      <section className="pb-24 pt-8">
         <Container>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {TECH_STACK.map((group, i) => (
