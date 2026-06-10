@@ -1,4 +1,5 @@
 import { Container } from "@/components/layout/Container";
+import { ScrollWords } from "@/components/fx/ScrollWords";
 
 export function Manifesto() {
   return (
@@ -16,12 +17,10 @@ export function Manifesto() {
           La IA es un <span className="text-paper/40">commodity</span>. La{" "}
           <span className="text-cobalt">confianza</span>, no.
         </h2>
-        <p className="mt-10 max-w-2xl text-[19px] leading-relaxed text-paper/65">
-          Cualquiera puede pedirle código a un modelo. Lo difícil —y lo que de verdad
-          mueve un negocio— es entender la operación, integrar lo que nadie quiere tocar,
-          y responder por el resultado con la cara y el nombre de una empresa formal.
-          Eso es lo que hacemos.
-        </p>
+        <ScrollWords
+          className="mt-10 max-w-2xl text-[19px] leading-relaxed text-paper/85"
+          text="Cualquiera puede pedirle código a un modelo. Lo difícil —y lo que de verdad mueve un negocio— es entender la operación, integrar lo que nadie quiere tocar, y responder por el resultado con la cara y el nombre de una empresa formal. Eso es lo que hacemos."
+        />
       </Container>
     </section>
   );
