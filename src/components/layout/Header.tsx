@@ -21,6 +21,19 @@ export function Header() {
   // Sobre el hero oscuro del home (sin scroll): header transparente con texto claro.
   const overHero = pathname === "/" && !scrolled && !mobileOpen;
 
+  // El logo SIEMPRE lleva al inicio: si ya estás en el home, sube suave al tope
+  // (Lenis si está activo) y limpia el #ancla de la URL.
+  const onLogoClick = (e: React.MouseEvent) => {
+    setMobileOpen(false);
+    if (pathname !== "/") return;
+    e.preventDefault();
+    if (window.__lenis) window.__lenis.scrollTo(0);
+    else window.scrollTo({ top: 0, behavior: "smooth" });
+    if (window.location.hash) {
+      history.replaceState(null, "", window.location.pathname);
+    }
+  };
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
@@ -30,7 +43,7 @@ export function Header() {
       }`}
     >
       <nav className="mx-auto flex h-[92px] max-w-[1240px] items-center justify-between px-5 sm:px-8 lg:px-10">
-        <Link href="/" aria-label="BlueBox — inicio">
+        <Link href="/" aria-label="BlueBox — inicio" onClick={onLogoClick}>
           <Wordmark />
         </Link>
 

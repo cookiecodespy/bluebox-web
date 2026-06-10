@@ -3,6 +3,12 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
+declare global {
+  interface Window {
+    __lenis?: Lenis;
+  }
+}
+
 // Scroll suave global (estilo Exadel). Respeta prefers-reduced-motion.
 export function SmoothScroll() {
   useEffect(() => {
@@ -13,6 +19,7 @@ export function SmoothScroll() {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     });
+    window.__lenis = lenis;
 
     let raf = 0;
     const loop = (time: number) => {
@@ -38,6 +45,7 @@ export function SmoothScroll() {
       cancelAnimationFrame(raf);
       document.removeEventListener("click", onClick);
       lenis.destroy();
+      delete window.__lenis;
     };
   }, []);
 

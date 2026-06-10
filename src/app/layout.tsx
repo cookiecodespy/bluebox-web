@@ -7,6 +7,7 @@ import { CTASticky } from "@/components/layout/CTASticky";
 import { SmoothScroll } from "@/components/fx/SmoothScroll";
 import { ScrollProgress } from "@/components/fx/ScrollProgress";
 import { buildMetadata } from "@/lib/metadata";
+import { asset } from "@/lib/asset";
 
 // Display / títulos — grotesca con carácter, peso medio (no Geist/Inter)
 const fontDisplay = Schibsted_Grotesk({
@@ -39,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href={asset("/favicon.svg")} type="image/svg+xml" />
         {/* "cutting the mustard": habilita los reveals solo si hay JS */}
         <script
           dangerouslySetInnerHTML={{

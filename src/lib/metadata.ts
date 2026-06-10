@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_NAME, SITE_TAGLINE, SITE_DESCRIPTION, SITE_URL } from "./constants";
+import { asset } from "./asset";
 
 export function buildMetadata(overrides?: Partial<Metadata>): Metadata {
   const title = overrides?.title
@@ -24,6 +25,7 @@ export function buildMetadata(overrides?: Partial<Metadata>): Metadata {
       type: "website",
       images: [
         {
+          // metadataBase ya resuelve el basePath; no prefijar aquí.
           url: "/images/bluebox-logo.png",
           width: 1310,
           height: 1200,
@@ -41,8 +43,8 @@ export function buildMetadata(overrides?: Partial<Metadata>): Metadata {
       follow: true,
     },
     icons: {
-      icon: "/images/bluebox-logo.png",
-      apple: "/images/bluebox-logo.png",
+      icon: asset("/images/bluebox-logo.png"),
+      apple: asset("/images/bluebox-logo.png"),
     },
     ...overrides,
   };

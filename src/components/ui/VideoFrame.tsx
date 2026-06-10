@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Icon } from "@/components/ui/Icon";
+import { asset } from "@/lib/asset";
 
 // Video en loop (autoplay/muted/playsinline, como CodersLab). Si el archivo no
 // existe aún, muestra un placeholder animado on-brand. Drop-in: deja el .mp4 con
@@ -31,8 +32,8 @@ export function VideoFrame({
     >
       {show ? (
         <video
-          src={src}
-          poster={poster}
+          src={asset(src!)}
+          poster={poster ? asset(poster) : undefined}
           autoPlay
           loop
           muted

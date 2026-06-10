@@ -24,6 +24,9 @@ export function MidCTA() {
                 <path d="M3 8h9M8 4l4 4-4 4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Button>
+            <p className="mono mt-5 text-[11.5px] tracking-[0.04em] text-paper/45">
+              30 minutos · sin costo · te llevas un plan, trabajemos juntos o no
+            </p>
           </div>
         </div>
       </Container>

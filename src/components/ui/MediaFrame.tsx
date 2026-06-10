@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Icon } from "@/components/ui/Icon";
+import { asset } from "@/lib/asset";
 
 // Marco de imagen con fallback elegante: si el archivo aún no existe en
 // public/images, muestra un placeholder on-brand con el nombre sugerido.
@@ -32,7 +33,7 @@ export function MediaFrame({
       {showImg ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={src}
+          src={asset(src!)}
           alt={alt}
           loading="lazy"
           onError={() => setFailed(true)}

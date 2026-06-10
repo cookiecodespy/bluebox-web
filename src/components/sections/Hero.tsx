@@ -79,6 +79,10 @@ export function Hero() {
             </Link>
           </motion.div>
 
+          <motion.p variants={up} className="mono mt-5 text-[11.5px] tracking-[0.04em] text-paper/45">
+            Diagnóstico sin costo · Respuesta en menos de 24 h hábiles · Sin compromiso
+          </motion.p>
+
           <motion.div variants={up} className="mt-14 flex flex-wrap gap-0 border-t border-white/12 pt-6">
             {HERO.stats.map((s, i) => (
               <div key={s.l} className={`pr-8 ${i < HERO.stats.length - 1 ? "mr-8 border-r border-white/10" : ""}`}>

@@ -1,6 +1,26 @@
 import Link from "next/link";
 import { WHATSAPP_FULL_URL, CONTACT_EMAIL } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
+import { Icon } from "@/components/ui/Icon";
+
+// Qué pasa después de escribir — quitar el miedo al "¿y ahora qué?"
+const NEXT_STEPS = [
+  {
+    icon: "message",
+    title: "Nos cuentas tu proceso",
+    desc: "30 minutos, por WhatsApp o videollamada. Sin preparar nada.",
+  },
+  {
+    icon: "map",
+    title: "Te mostramos el plan",
+    desc: "Cómo lo haríamos, en qué plazos y con una estimación clara.",
+  },
+  {
+    icon: "handshake",
+    title: "Tú decides",
+    desc: "Y si no somos el partner correcto, te lo decimos a la primera.",
+  },
+];
 
 export function ContactCTA() {
   return (
@@ -37,6 +57,21 @@ export function ContactCTA() {
             Ver formas de contacto
           </Link>
         </div>
+        <div className="mx-auto mt-14 grid max-w-3xl grid-cols-1 gap-4 text-left sm:grid-cols-3">
+          {NEXT_STEPS.map((s) => (
+            <div
+              key={s.title}
+              className="rounded-xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-sm"
+            >
+              <span className="grid h-9 w-9 place-items-center rounded-lg border border-white/12 text-cobalt">
+                <Icon name={s.icon} className="h-[18px] w-[18px]" />
+              </span>
+              <p className="mt-3.5 text-[14.5px] font-semibold text-paper">{s.title}</p>
+              <p className="mt-1.5 text-[13px] leading-relaxed text-paper/55">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+
         <p className="mono mt-10 text-[12px] tracking-[0.06em] text-paper/45">
           o escríbenos a{" "}
           <a href={`mailto:${CONTACT_EMAIL}`} className="text-paper/70 underline underline-offset-4 hover:text-paper">
