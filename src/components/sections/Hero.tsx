@@ -21,7 +21,7 @@ const up: Variants = {
 export function Hero() {
   const words = HERO.titleLead.split(" ");
   return (
-    <section className="relative isolate flex min-h-[94vh] items-center overflow-hidden bg-[#100d09] pt-28 pb-16 text-paper">
+    <section className="relative isolate flex min-h-[94svh] items-center overflow-hidden bg-[#100d09] pt-28 pb-16 text-paper">
       {/* red de operaciones animada */}
       <HeroCanvas className="absolute inset-0 h-full w-full opacity-90" />
       {/* atmósfera: vignette + glow + grano */}

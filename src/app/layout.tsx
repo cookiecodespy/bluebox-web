@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CTASticky } from "@/components/layout/CTASticky";
 import { SmoothScroll } from "@/components/fx/SmoothScroll";
 import { ScrollProgress } from "@/components/fx/ScrollProgress";
+import { CommandPalette } from "@/components/fx/CommandPalette";
 import { buildMetadata } from "@/lib/metadata";
 import { asset } from "@/lib/asset";
 
@@ -59,6 +60,7 @@ export default function RootLayout({
         </a>
         <SmoothScroll />
         <ScrollProgress />
+        <CommandPalette />
         <Header />
         <main id="main">{children}</main>
         <Footer />

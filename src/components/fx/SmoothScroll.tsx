@@ -13,6 +13,9 @@ declare global {
 export function SmoothScroll() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // Móvil/tablet: scroll 100% nativo — Lenis pelea con el rebote táctil y la
+    // barra del navegador que se colapsa al deslizar.
+    if (window.matchMedia("(pointer: coarse)").matches) return;
 
     const lenis = new Lenis({
       duration: 1.05,

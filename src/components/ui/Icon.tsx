@@ -39,6 +39,11 @@ import {
   GraduationCap,
   Wheat,
   Bus,
+  Search,
+  Command,
+  Mail,
+  Home,
+  Copy,
   type LucideIcon,
 } from "lucide-react";
 
@@ -70,6 +75,11 @@ const MAP: Record<string, LucideIcon> = {
   energia: Zap,
   agro: Wheat,
   transporte: Bus,
+  search: Search,
+  command: Command,
+  mail: Mail,
+  home: Home,
+  copy: Copy,
   // extra (secciones nuevas)
   clock: Clock,
   badge: BadgeCheck,

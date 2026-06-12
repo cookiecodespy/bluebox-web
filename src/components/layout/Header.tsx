@@ -70,6 +70,24 @@ export function Header() {
             );
           })}
           <li>
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent("bb:open-cmdk"))}
+              aria-label="Abrir buscador (Ctrl+K)"
+              title="Buscar en el sitio (Ctrl+K)"
+              className={`mono inline-flex items-center gap-1.5 rounded-full border px-3 py-2 text-[11px] tracking-wide transition-colors ${
+                overHero
+                  ? "border-white/20 text-paper/60 hover:border-white/40 hover:text-paper"
+                  : "border-line text-ink-mute hover:border-ink/30 hover:text-ink"
+              }`}
+            >
+              <svg className="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="11" cy="11" r="7" />
+                <path d="m21 21-4.3-4.3" strokeLinecap="round" />
+              </svg>
+              ⌘K
+            </button>
+          </li>
+          <li>
             <Link
               href="/contacto"
               className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-[14px] font-semibold transition-all ${

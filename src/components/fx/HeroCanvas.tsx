@@ -132,7 +132,13 @@ export function HeroCanvas({ className = "" }: { className?: string }) {
     build();
     raf = requestAnimationFrame(draw);
 
-    const onResize = () => { dpr = Math.min(window.devicePixelRatio || 1, 2); build(); };
+    const onResize = () => {
+      // En móvil, colapsar/expandir la barra del navegador dispara resizes solo de
+      // alto; reconstruir ahí re-aleatoriza la red y se ve como un salto brusco.
+      if (Math.abs(cv.getBoundingClientRect().width - w) < 1) return;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      build();
+    };
     const onMove = (e: PointerEvent) => {
       const r = cv.getBoundingClientRect();
       mouse.tx = (e.clientX - r.left) / r.width;

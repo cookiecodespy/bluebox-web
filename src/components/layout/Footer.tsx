@@ -112,7 +112,8 @@ export function Footer() {
           BLUEBOX
         </div>
 
-        <div className="flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 font-mono text-xs text-paper/40 sm:flex-row sm:items-center">
+        {/* pb-16 móvil: deja libre la esquina donde flota el botón de WhatsApp */}
+        <div className="flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 pb-16 font-mono text-xs text-paper/40 sm:flex-row sm:items-center sm:pb-0">
           <p>© {year} {SITE_NAME} · Todos los derechos reservados</p>
           <div className="flex items-center gap-5">
             <Link href="/privacidad" className="transition-colors hover:text-paper">
